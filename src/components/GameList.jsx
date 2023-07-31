@@ -1,46 +1,37 @@
 import React from "react";
 import supabase from "../config/supabaseClient";
 import { useState, useEffect } from "react";
-import Browser from "./Browser"
+import Browser from "./Browser";
 
 export default function GameList() {
-  console.log(supabase);
-  const [fetchError, setFetchError] = useState(null);
-  const [allgames, setGames] = useState(null);
+  const [list, setList] = useState(null);
 
   useEffect(() => {
-    const fetchGames = async () => {
-      let { data, error } = await supabase.from("games").select();
+    fetch("/moby/games?")
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        }
+      })
+      .then((data) => {
+        console.log("Lista gierek", data);
 
-      if (error) {
-        setFetchError("Nie udało sie pobrac games");
-        setGames(null);
-        console.log(error);
-      }
-      if (data) {
-        setGames(data);
-        setFetchError(null);
-      }
-    };
-    fetchGames();
+        setList(data);
+      });
   }, []);
 
   return (
     <>
-      <Browser table= {allgames}/>
-      <div className="gameList_container container">
-        {fetchError && <p>{fetchError}</p>}
-        {allgames && (
-          <div className="gameList">
-            {allgames.map((game) => {
-              return (
-                <div key={game.id} className="game">
-                  {game.title}, {game.gatunek},{game.platform}
-                </div>
-              );
-            })}
+      <div className="gameList_container">
+        {list?.games?.map((game) => (
+          <div className="gameBox" key={game.title}>
+           <div className="gameBox_img"> <img className="gameImg" src={game.sample_cover.image}></img></div>
+            <div className="gameContent">
+              <h6>{game.title}</h6>
+              <p>{game.platforms.map(el => el.platform_name).join(" , ")}</p>
+            </div>
           </div>
-        )}
+        ))}
       </div>
     </>
   );

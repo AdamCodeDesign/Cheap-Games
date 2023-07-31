@@ -26,7 +26,6 @@ const ArraySearch = () => {
           <li key={index}>{item}</li>
         ))}
       </ul>
-      <div className="lupa"></div>
     </div>
   );
 };
