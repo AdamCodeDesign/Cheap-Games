@@ -5,6 +5,7 @@ import Browser from "./Browser";
 
 export default function GameList() {
   const [list, setList] = useState(null);
+  const price = "99";
 
   useEffect(() => {
     fetch("/moby/games?")
@@ -22,17 +23,26 @@ export default function GameList() {
 
   return (
     <>
-      <div className="gameList_container">
+      <section className="gameList_container">
         {list?.games?.map((game) => (
-          <div className="gameBox" key={game.title}>
-           <div className="gameBox_img"> <img className="gameImg" src={game.sample_cover.image}></img></div>
-            <div className="gameContent">
-              <h6>{game.title}</h6>
-              <p>{game.platforms.map(el => el.platform_name).join(" , ")}</p>
+          <section className="gameBox" key={game.title}>
+            <div className="gameBox_img">
+              {" "}
+              <img className="gameImg" src={game.sample_cover.image}></img>
             </div>
-          </div>
+            <article className="gameContent">
+              <div className="gameTitle">
+                <h6>{game.title}</h6>
+                <p>
+                  {game.platforms.map((el) => el.platform_name).join(" , ")}
+                </p>
+                <p>{game.genres[0].genre_name}</p>
+              </div>
+              <div className="gamePrice"><p>59<sup>99</sup></p></div>
+            </article>
+          </section>
         ))}
-      </div>
+      </section>
     </>
   );
 }
