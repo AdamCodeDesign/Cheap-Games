@@ -120,9 +120,9 @@ sup {
     .gameList_container {
       display: flex;
       flex-wrap: wrap;
+      gap: 50px;
       .gameBox {
         background-color: transparent;
-        margin-top: 30px;
         margin-bottom: 30px;
         max-height: 240px;
         max-width: 400px;
@@ -133,6 +133,10 @@ sup {
         font-size: 1em;
         color: $basic-font-color;
         position: relative;
+
+        &:hover{
+          background-color: $basic-ascent-color;
+        }
 
         .ratingPoints {
           img {
@@ -179,29 +183,51 @@ sup {
           justify-content: space-evenly;
 
           .gameTitle {
-            height: 50%;
-            padding: 20px;
+            height: 40%;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            row-gap: 20px;
 
             h6 {
               font-size: 1em;
+              color: rgb(236, 156, 51);
             }
             p {
               font-size: 0.5em;
             }
+
+            .platform_name{
+              font-style: italic;
+            }
           }
 
           .gamePrice {
-            height: 50%;
+            height: 60%;
             display: flex;
             justify-content: center;
             align-items: center;
             font-size: 3em;
+            color: rgb(55, 191, 201);
+            font-style: italic;
+            
 
             span {
               font-size: 0.5em;
+            }
+          }
+
+          .addGame{
+            text-align: end;
+            margin-bottom: 5px;
+            a{
+              color: $basic-font-color;
+              font-size: 0.5em;
+              margin-left: 5px;
+            }
+            img{
+              height: 15px;
+              width: auto;
             }
           }
         }

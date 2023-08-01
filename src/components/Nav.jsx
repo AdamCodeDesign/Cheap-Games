@@ -40,7 +40,7 @@ export default function Nav() {
                 <NavLink to="/contact" style={({ isActive }) => isActive ? { color: 'tomato' } : {}} end> contact </NavLink>
               </li>
               <li>
-                <NavLink to="/basket" style={({ isActive }) => isActive ? { color: 'tomato' } : {}} end> basket </NavLink>
+                <NavLink to="/bucket" style={({ isActive }) => isActive ? { color: 'tomato' } : {}} end> bucket </NavLink>
               </li>
               <li>
                 <NavLink to="/login" style={({ isActive }) => isActive ? { color: 'tomato' } : {}} end> login </NavLink>

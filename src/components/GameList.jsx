@@ -37,7 +37,7 @@ export default function GameList() {
                   <div className="points">{game.moby_score}</div>
                 </div>
                 <h6>{game.title}</h6>
-                <p>
+                <p className="platform_name">
                   {game.platforms.map((el) => el.platform_name).join(" , ")}
                 </p>
                 <p>{game.genres[0].genre_name}</p>
@@ -48,6 +48,7 @@ export default function GameList() {
                   <span>pln</span>
                 </p>
               </div>
+              <div className="addGame"><a href=""><img src="src/assets/red-cross.svg" alt="add" />add</a></div>
             </article>
           </section>
         ))}

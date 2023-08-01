@@ -10,7 +10,7 @@ import {
 } from "react-router-dom";
 import Home from "../pages/Home";
 import Contact from "../pages/Contact";
-import Basket from "../pages/Basket";
+import Bucket from "../pages/Bucket";
 import Login from "../pages/Login";
 import ShopRules from "../pages/ShopRules";
 import Promo from "../pages/Promo";
@@ -28,7 +28,7 @@ export default function Main() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/basket" element={<Basket />} />
+          <Route path="/basket" element={<Bucket />} />
           <Route path="/login" element={<Login />} />
           <Route path="/rules" element={<ShopRules />} />
           <Route path="/promo" element={<Promo />} />

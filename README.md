@@ -9,3 +9,4 @@ Plan projektu
 6. Stworzyc koszyk - lista dodanych gier i cena za wszystko
 7. mozliwosc wydrukowania zestawienia koszyka - jesli bedzie czas
 8. Stworzyc okno logowania i mozliwosc rejestracji - jesli bedzie czas
+9. Zrobic Wichlist i mozliwosc dodania polubionych serduszkiem gier- oczywiscie jak starczy czasu :)
