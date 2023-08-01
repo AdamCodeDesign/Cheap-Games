@@ -32,13 +32,22 @@ export default function GameList() {
             </div>
             <article className="gameContent">
               <div className="gameTitle">
+                <div className="ratingPoints">
+                 {game.moby_score&&<img src="src/assets/star-sharp.svg" alt="star" />}
+                  <div className="points">{game.moby_score}</div>
+                </div>
                 <h6>{game.title}</h6>
                 <p>
                   {game.platforms.map((el) => el.platform_name).join(" , ")}
                 </p>
                 <p>{game.genres[0].genre_name}</p>
               </div>
-              <div className="gamePrice"><p>59<sup>99</sup></p></div>
+              <div className="gamePrice">
+                <p>
+                  59<sup>99</sup>
+                  <span>pln</span>
+                </p>
+              </div>
             </article>
           </section>
         ))}
