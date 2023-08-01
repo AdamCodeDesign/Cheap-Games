@@ -1,8 +1,11 @@
-# React + Vite
+Stronka ze sklepem internetowym Cheap Games
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Plan projektu
+1. Kazda stronka ma miec fetch do mobygames z filtrem
+2. Stworzyc wyszukiwarkę na kazdej stronie która bedzie szukała gry na aktualnej stronce
+3. jeden komponent ktory bedzie generował wygląd boxa przedstawiajacego gre
+4. box z grą - klikając w img lub title ma nas przeniesc do karty z detalami gry
+5. Stworzyc ikonkę koszyka aby dodac grę
+6. Stworzyc koszyk - lista dodanych gier i cena za wszystko
+7. mozliwosc wydrukowania zestawienia koszyka - jesli bedzie czas
+8. Stworzyc okno logowania i mozliwosc rejestracji - jesli bedzie czas
