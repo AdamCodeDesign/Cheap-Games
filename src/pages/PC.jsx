@@ -1,7 +1,12 @@
-import React from 'react'
+import React from "react";
+import GameList from "../components/GameList";
+import Browser from "../components/Browser";
 
 export default function PC() {
   return (
-    <div>PC Games</div>
-  )
+    <>
+      <Browser />
+      <GameList filter = "platform=3"/>
+    </>
+  );
 }
