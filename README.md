@@ -10,3 +10,4 @@ Plan projektu
 7. mozliwosc wydrukowania zestawienia koszyka - jesli bedzie czas
 8. Stworzyc okno logowania i mozliwosc rejestracji - jesli bedzie czas
 9. Zrobic Wichlist i mozliwosc dodania polubionych serduszkiem gier- oczywiscie jak starczy czasu :)
+10. wstawic ikonki koszyk i kontakt zamiast napisów

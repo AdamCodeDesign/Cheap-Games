@@ -12,7 +12,6 @@ function App() {
     <div className="major_container">
       <Router>
         <Nav />
-        <Browser />
         <Main />
         <Footer />
       </Router>
