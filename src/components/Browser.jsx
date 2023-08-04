@@ -1,17 +1,16 @@
 import React, { useState } from 'react';
 
-const ArraySearch = () => {
+const Browser = ({object, error}) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [result, setResult] = useState([]);
-  const dataArray = ['apple', 'banana', 'orange', 'grapes', 'pineapple', 'watermelon'];
 
-  const handleSearch = (query) => {
-    const filteredArray = dataArray.filter(item => item.toLowerCase().includes(query.toLowerCase()));
+  const handleSearch = () => {
+    const filteredArray = object.filter(game => game.title.toLowerCase().includes(searchQuery))
     setResult(filteredArray);
   };
 
   return (
-    <div>
+    <div className='browser'>
       <input
         type="text"
         placeholder="Search..."
@@ -21,14 +20,47 @@ const ArraySearch = () => {
           handleSearch(e.target.value);
         }}
       />
-      <ul>
-        {result.map((item, index) => (
-          <li key={index}>{item}</li>
+      <section className="gameList_container">
+        {error && <div>{error}</div>}
+        {result && result.map((game) => (
+          <section className="gameBox" key={game.title}>
+            <div className="gameBox_img">
+              {" "}
+              <img className="gameImg" src={game.sample_cover.image}></img>
+            </div>
+            <article className="gameContent">
+              <div className="gameTitle">
+                <div className="ratingPoints">
+                  {game.moby_score && (
+                    <img src="src/assets/star-sharp.svg" alt="star" />
+                  )}
+                  <div className="points">{game.moby_score}</div>
+                </div>
+                <h6>{game.title}</h6>
+                <p className="platform_name">
+                  {game.platforms.map((el) => el.platform_name).join(" , ")}
+                </p>
+                <p>{game.genres[0].genre_name}</p>
+              </div>
+              <div className="gamePrice">
+                <p>
+                  59<sup>99</sup>
+                  <span>pln</span>
+                </p>
+              </div>
+              <div className="addGame">
+                <a href="">
+                  <img src="src/assets/red-cross.svg" alt="add" />
+                  add
+                </a>
+              </div>
+            </article>
+          </section>
         ))}
-      </ul>
+      </section>
     </div>
   );
 };
 
-export default ArraySearch;
+export default Browser;
 

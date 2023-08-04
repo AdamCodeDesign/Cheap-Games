@@ -11,3 +11,9 @@ Plan projektu
 8. Stworzyc okno logowania i mozliwosc rejestracji - jesli bedzie czas
 9. Zrobic Wichlist i mozliwosc dodania polubionych serduszkiem gier- oczywiscie jak starczy czasu :)
 10. wstawic ikonki koszyk i kontakt zamiast napisów
+
+
+pytania do mentora
+
+1. Na NewGames czasem wywala error 500
+2. 

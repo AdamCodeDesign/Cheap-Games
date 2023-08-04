@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 
-export default function GameList({ filter, releaseDate }) {
+export default function GameList({ filter }) {
   const [list, setList] = useState(null);
   const moby = "/moby/games?&";
   const filterGame = filter;

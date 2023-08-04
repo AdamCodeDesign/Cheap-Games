@@ -1,0 +1,189 @@
+{
+    "games": [
+        {
+            "alternate_titles": [
+                {
+                    "description": "Finnish title",
+                    "title": "Salaiset Kansiot"
+                },
+                {
+                    "description": "PSX title",
+                    "title": "The X Files"
+                },
+                {
+                    "description": "Spanish title",
+                    "title": "The X-Files: Expediente X - El Juego"
+                },
+                {
+                    "description": "French title",
+                    "title": "The X-Files: Le Jeu"
+                }
+            ],
+            "description": "<p>As an extension of one of the most long-running television series of all time, <em>The X-Files</em>, play through the eyes of Special Agent Craig Willmore, a new FBI field investigator brought in to locate missing agents Fox Mulder and Dana Scully whose last location was the Everett, Washington, area. In this \"movie quality\" video production, characters are played by the actors and actresses from the show, including <a href=\"https://www.mobygames.com/person/9411/gillian-anderson/\">Gillian Anderson</a> (Scully) and <a href=\"https://www.mobygames.com/person/9412/david-duchovny/\">David Duchovny</a> (Mulder).</p>\n<p>As the game begins, you are given a briefing of your mission. Gather up all state-of-the-art spy tools (night vision goggles, a digital camera, PDA, lock picks, evidence kit, a standard issue revolver, handcuffs and badge) and then head out to follow their trail. As you explore the various locations, take photographs, pick up pieces of evidence and talk with people. Use your Newton PDA to access the navigational map, to make notes and send/receive e-mail. Trace telephone numbers, run background checks and license plate ids and even post an All Points Bulletin on missing persons using the computer network at your home or office. By using photo viewer software, download field photographs to the computer where they can be enlarged and studied more closely for clues.</p>\n<p>Features include emotion icons for interjecting different tones during conversations (mean, humorous or technical) which effect the answer given. An in-game hint system, Artificial Intelligence, can be set on or off. In addition, there are multiple endings as a direct result of actions you take.</p>",
+            "game_id": 1,
+            "genres": [
+                {
+                    "genre_category": "Basic Genres",
+                    "genre_category_id": 1,
+                    "genre_id": 2,
+                    "genre_name": "Adventure"
+                },
+                {
+                    "genre_category": "Perspective",
+                    "genre_category_id": 2,
+                    "genre_id": 7,
+                    "genre_name": "1st-person"
+                },
+                {
+                    "genre_category": "Art Style",
+                    "genre_category_id": 13,
+                    "genre_id": 217,
+                    "genre_name": "Live action"
+                },
+                {
+                    "genre_category": "Setting",
+                    "genre_category_id": 10,
+                    "genre_id": 8,
+                    "genre_name": "Sci-fi / futuristic"
+                },
+                {
+                    "genre_category": "Narrative Theme/Topic",
+                    "genre_category_id": 8,
+                    "genre_id": 55,
+                    "genre_name": "Detective / mystery"
+                },
+                {
+                    "genre_category": "Other Attributes",
+                    "genre_category_id": 6,
+                    "genre_id": 82,
+                    "genre_name": "Licensed"
+                }
+            ],
+            "moby_score": 7.1,
+            "moby_url": "https://www.mobygames.com/game/1/the-x-files-game/",
+            "num_votes": 52,
+            "official_url": null,
+            "platforms": [
+                {
+                    "first_release_date": "1998",
+                    "platform_id": 3,
+                    "platform_name": "Windows"
+                },
+                {
+                    "first_release_date": "1999",
+                    "platform_id": 6,
+                    "platform_name": "PlayStation"
+                },
+                {
+                    "first_release_date": "1998-06",
+                    "platform_id": 74,
+                    "platform_name": "Macintosh"
+                }
+            ],
+            "sample_cover": {
+                "height": 800,
+                "image": "https://cdn.mobygames.com/covers/4062982-the-x-files-game-windows-front-cover.jpg",
+                "platforms": [
+                    "Windows",
+                    "Macintosh"
+                ],
+                "thumbnail_image": "https://cdn.mobygames.com/872aed6c-aba4-11ed-a188-02420a00019a.webp",
+                "width": 690
+            },
+            "sample_screenshots": [
+                {
+                    "caption": "Dana Scully is as sceptical as ever, and until she sees some proof, you ain't no friend of her.",
+                    "height": 576,
+                    "image": "https://cdn.mobygames.com/screenshots/10470766-the-x-files-game-playstation-dana-scully-is-as-sceptical-as-ever.jpg",
+                    "thumbnail_image": "https://cdn.mobygames.com/6f7358b4-ac10-11ed-803a-02420a000131.webp",
+                    "width": 720
+                },
+                {
+                    "caption": "Sometimes, when you're not asking questions, you can indicate in which mood do you want to answer something.",
+                    "height": 576,
+                    "image": "https://cdn.mobygames.com/screenshots/10470751-the-x-files-game-playstation-sometimes-when-youre-not-asking-que.jpg",
+                    "thumbnail_image": "https://cdn.mobygames.com/6dfcf648-ac10-11ed-803a-02420a000131.webp",
+                    "width": 720
+                },
+                {
+                    "caption": "Craig Willmore's computer's main menu",
+                    "height": 480,
+                    "image": "https://cdn.mobygames.com/screenshots/11076040-the-x-files-game-windows-craig-willmores-computers-main-menu.jpg",
+                    "thumbnail_image": "https://cdn.mobygames.com/99c14946-ac15-11ed-b075-02420a00012f.webp",
+                    "width": 640
+                },
+                {
+                    "caption": "PDA allows you to travel between locations",
+                    "height": 480,
+                    "image": "https://cdn.mobygames.com/screenshots/11072416-the-x-files-game-windows-pda-allows-you-to-travel-between-locati.jpg",
+                    "thumbnail_image": "https://cdn.mobygames.com/913d9e32-ac15-11ed-803a-02420a000131.webp",
+                    "width": 640
+                },
+                {
+                    "caption": "Strange white markings ",
+                    "height": 480,
+                    "image": "https://cdn.mobygames.com/screenshots/3871848-the-x-files-game-windows-strange-white-markings.jpg",
+                    "thumbnail_image": "https://cdn.mobygames.com/e36dfd1e-ab9d-11ed-a061-02420a00019d.webp",
+                    "width": 640
+                }
+            ],
+            "title": "The X-Files Game"
+        },
+        {
+            "alternate_titles": [],
+            "description": "<p>Roger Rabbit has been framed for the murder of Marvin Acme, head of the Acme Corporation. Acme's will states that upon his death, Toon Town would be left ot the Toons, but the will is nowhere to be found. You have to find the will and save your wife, Jessica, from Judge Doom and his weasels.</p>\n<p>The game takes place in Hollywood, 1947, where Toons are alive. There are 4 levels in the game, 2 of which are driving levels (levels 1 &amp; 3). Roger and Benny the cab have to beat the weasels to the destination, while dodging cars, trams and Judge Doom's dip which is scattered on the road. There are pick-ups to help you on your way.</p>\n<p>Level 2 is the Ink &amp; Paint Club. The will is on one of the tables. Roger has to pick up all the pieces of paper the penguin waiters put down, whilst avoiding the alcohol and gorilla bouncer.</p>\n<p>Level 4 has you in Judge Doom's warehouse trying to save your wife, Jessica from the dip truck. You have to use gags to progress and make the weasels laugh themselves to death, literally!</p>",
+            "game_id": 2,
+            "genres": [
+                {
+                    "genre_category": "Basic Genres",
+                    "genre_category_id": 1,
+                    "genre_id": 1,
+                    "genre_name": "Action"
+                },
+                {
+                    "genre_category": "Gameplay",
+                    "genre_category_id": 4,
+                    "genre_id": 9,
+                    "genre_name": "Arcade"
+                },
+                {
+                    "genre_category": "Other Attributes",
+                    "genre_category_id": 6,
+                    "genre_id": 82,
+                    "genre_name": "Licensed"
+                }
+            ],
+            "moby_score": 5.9,
+            "moby_url": "https://www.mobygames.com/game/2/who-framed-roger-rabbit/",
+            "num_votes": 34,
+            "official_url": null,
+            "platforms": [
+                {
+                    "first_release_date": "1988",
+                    "platform_id": 2,
+                    "platform_name": "DOS"
+                },
+                {
+                    "first_release_date": "1988",
+                    "platform_id": 19,
+                    "platform_name": "Amiga"
+                },
+                {
+                    "first_release_date": "1988",
+                    "platform_id": 24,
+                    "platform_name": "Atari ST"
+                },
+                {
+                    "first_release_date": "1988",
+                    "platform_id": 27,
+                    "platform_name": "Commodore 64"
+                },
+                {
+                    "first_release_date": "1988",
+                    "platform_id": 31,
+                    "platform_name": "Apple II"
+                }
+            ]
+        }
+    ]
+}
