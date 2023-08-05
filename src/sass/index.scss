@@ -1,6 +1,7 @@
 @use "variables" as *;
 @use "placeholders" as *;
 @import "mixins";
+@import "browser";
 
 :root {
   font-family: Arial, sans-serif;
@@ -25,7 +26,6 @@ body {
 * {
   box-sizing: border-box;
 }
-
 
 a {
   text-decoration: none;
@@ -73,6 +73,22 @@ sup {
   align-items: center;
   padding: 0;
   z-index: 1;
+
+  .bucket,
+  .login {
+    background-color: transparent;
+    opacity: 0.6;
+    font-size: 1em;
+
+    img {
+      height: 1.2em;
+      width: 1.2em;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+  }
 }
 .footer,
 .navlist li {
@@ -84,33 +100,10 @@ sup {
   }
 }
 
-.browser_container {
-  margin-top: 80px;
-  display: block;
-  text-align: center;
-  background-color: rgba(33, 33, 33, 0.9);
-  position: fixed;
-  top: 0;
-  width: 100%;
-
-  .browser_form {
-    margin: 20px 20px;
-
-    button,
-    input {
-      @include buttons("20px", "200px");
-    }
-
-    input {
-      width: 300px;
-    }
-  }
-}
-
 .main {
   text-align: center;
   font-size: 1em;
-  margin-top: 180px;
+  margin-top: 100px;
   * {
     width: 100%;
     margin: 0 auto;
@@ -136,7 +129,7 @@ sup {
         color: $basic-font-color;
         position: relative;
 
-        &:hover{
+        &:hover {
           background-color: $basic-ascent-color;
         }
 
@@ -199,7 +192,7 @@ sup {
               font-size: 0.5em;
             }
 
-            .platform_name{
+            .platform_name {
               font-style: italic;
             }
           }
@@ -212,22 +205,27 @@ sup {
             font-size: 3em;
             color: rgb(55, 191, 201);
             font-style: italic;
-            
 
             span {
               font-size: 0.5em;
             }
           }
 
-          .addGame{
+          .addGame {
             text-align: end;
             margin-bottom: 5px;
-            a{
+
+            &::after {
+              content: "\f07a";
+              font-family: "Font Awesome 6 free";
+              font-weight: 900;
+            }
+            a {
               color: $basic-font-color;
               font-size: 0.5em;
               margin-left: 5px;
             }
-            img{
+            img {
               height: 15px;
               width: auto;
             }

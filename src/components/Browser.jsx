@@ -11,9 +11,9 @@ const Browser = ({object, error}) => {
 
   return (
     <div className='browser'>
-      <input
+      <input id='browser_input'
         type="text"
-        placeholder="Search..."
+        placeholder="Search game..."
         value={searchQuery}
         onChange={(e) => {
           setSearchQuery(e.target.value);
