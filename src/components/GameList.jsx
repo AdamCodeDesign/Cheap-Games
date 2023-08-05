@@ -20,6 +20,10 @@ export default function GameList({ filter }) {
       });
   }, [filterGame]);
 
+  function AddToBucket(){
+    return console.log("dodano do koszyka")
+  }
+
   return (
     <>
       <section className="gameList_container">
@@ -50,10 +54,9 @@ export default function GameList({ filter }) {
                 </p>
               </div>
               <div className="addGame">
-                <a href="">
+                <button className="addGame_btn" onClick={AddToBucket}>
                   <img src="src/assets/red-cross.svg" alt="add" />
-                  add
-                </a>
+                  </button>
               </div>
             </article>
           </section>

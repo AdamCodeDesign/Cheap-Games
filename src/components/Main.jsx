@@ -28,7 +28,7 @@ export default function Main() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/basket" element={<Bucket />} />
+          <Route path="/bucket" element={<Bucket />} />
           <Route path="/login" element={<Login />} />
           <Route path="/rules" element={<ShopRules />} />
           <Route path="/promo" element={<Promo />} />

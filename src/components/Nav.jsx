@@ -13,12 +13,12 @@ export default function Nav() {
                 <NavLink
                   to="/promo"
                   style={({ isActive }) =>
-                    isActive ? { color: "tomato" } : {}
+                    isActive ? { color: "tomato" } : {color:"rgb(251, 161, 70)"}
                   }
                   end
                 >
                   {" "}
-                  Promo{" "}
+                  Special Offers{" "}
                 </NavLink>
               </li>
               <li>

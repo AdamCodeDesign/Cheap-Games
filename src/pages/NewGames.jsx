@@ -12,7 +12,7 @@ export default function NewGames() {
           return response.json();
         }
         return {
-          error: "nie udało sie gościu",
+          error: "Loading games...",
         };
       })
       .then((data) => {
