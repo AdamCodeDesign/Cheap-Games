@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 
 const Browser = ({object, error}) => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -29,8 +30,7 @@ const Browser = ({object, error}) => {
         {result && result.map((game) => (
            <section className="gameBox" key={game.title}>
            <div className="gameBox_img">
-             {" "}
-             <img className="gameImg" src={game.sample_cover.image}></img>
+           <NavLink to="/info"><img className="gameImg" src={game.sample_cover.image}></img></NavLink>
            </div>
            <article className="gameContent">
              <div className="gameTitle">
@@ -40,7 +40,7 @@ const Browser = ({object, error}) => {
                  )}
                  <div className="points">{game.moby_score}</div>
                </div>
-               <h6>{game.title}</h6>
+               <NavLink to="/info"><h6>{game.title}</h6></NavLink>
                <p className="platform_name">
                  {game.platforms.map((el) => el.platform_name).join(" , ")}
                </p>

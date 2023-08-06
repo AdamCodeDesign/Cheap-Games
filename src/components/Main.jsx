@@ -19,6 +19,7 @@ import PC from "../pages/PC";
 import Playstation from "../pages/Playstation";
 import Xbox from "../pages/Xbox";
 import AllGames from "../pages/AllGames";
+import GameInfo from "../pages/GameInfo";
 
 export default function Main() {
   return (
@@ -27,6 +28,7 @@ export default function Main() {
         <div className="main_container container">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/info" element={<GameInfo />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/bucket" element={<Bucket />} />
           <Route path="/login" element={<Login />} />

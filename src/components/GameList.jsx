@@ -1,5 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
+
 
 export default function GameList({ filter }) {
   const [list, setList] = useState(null);
@@ -30,8 +32,7 @@ export default function GameList({ filter }) {
         {list?.games?.map((game) => (
           <section className="gameBox" key={game.title}>
             <div className="gameBox_img">
-              {" "}
-              <img className="gameImg" src={game.sample_cover.image}></img>
+            <NavLink to="/info"><img className="gameImg" src={game.sample_cover.image}></img></NavLink>
             </div>
             <article className="gameContent">
               <div className="gameTitle">
@@ -41,7 +42,7 @@ export default function GameList({ filter }) {
                   )}
                   <div className="points">{game.moby_score}</div>
                 </div>
-                <h6>{game.title}</h6>
+                <NavLink to="/info"><h6>{game.title}</h6></NavLink>
                 <p className="platform_name">
                   {game.platforms.map((el) => el.platform_name).join(" , ")}
                 </p>

@@ -11,11 +11,15 @@ Plan projektu
 8. Stworzyc okno logowania i mozliwosc rejestracji - jesli bedzie czas
 9. Zrobic Wichlist i mozliwosc dodania polubionych serduszkiem gier- oczywiscie jak starczy czasu :)
 <!-- 10. wstawic ikonki koszyk i login zamiast napisów -->
+11. dodac filtry po gatunku gry obok wyszukiwarki
 
 
 
 pytania do mentora
 
-1. Na NewGames czasem wywala error 500
+<!-- 1. Na NewGames czasem wywala error 500 -->
 2. Jak przekazac propsa w Allgames z Gamelist do Browser???
 3. czemu wyszukiwarka działa z opoznieniem. wiem ze chodzi o aktualny stan w state ale jak to naprawic?
+4. navlinki nakładac na divy czy na img w srodku tego diva?
+5. Czy przycisk Buy ma cos robic? Czy wystarczy info "kupiono"?
+6. Jak połączyc GameInfo z kliknietą grą zeby zaciagal np title wlasnie z tej gry?
