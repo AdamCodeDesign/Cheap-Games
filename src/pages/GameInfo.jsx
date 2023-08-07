@@ -35,7 +35,7 @@ export default function GameInfo() {
         <section className="gameInfo_container container row">
           <section className="gameContent col-8">
             <div className="screenshots col-12">screenshots</div>
-            <div className="description col-12">opis gry</div>
+            <div className="description col-12">opis gry sciagniety z bazy</div>
           </section>
           <section className="gameBuy col-4">
             <h1>{game.title}</h1>
