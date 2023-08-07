@@ -18,8 +18,12 @@ Plan projektu
 pytania do mentora
 
 <!-- 1. Na NewGames czasem wywala error 500 -->
+<!-- 1. Ta baza gier jest stara albo tylko taką udostepniaja. Mam ją zmienic zeby zaliczyc projekt? -->
 2. Jak przekazac propsa w Allgames z Gamelist do Browser???
 3. czemu wyszukiwarka działa z opoznieniem. wiem ze chodzi o aktualny stan w state ale jak to naprawic?
 4. navlinki nakładac na divy czy na img w srodku tego diva?
 5. Czy przycisk Buy ma cos robic? Czy wystarczy info "kupiono"?
 6. Jak połączyc GameInfo z kliknietą grą zeby zaciagal np title wlasnie z tej gry?
+7. Czy robic grid layout dla mobile i desktop czy jeszcze na tableta i laptopa?
+8. hamburger menu w sasie czy react?
+9. 20 linijka Nav - czy sa potrzebne te klamry z pustym stringiem? To robi prettier.

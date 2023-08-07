@@ -1,0 +1,32 @@
+
+
+* {
+    box-sizing: border-box;
+  }
+  
+  $columns: 12;
+  $gutters: 15px;
+  $base-column-size: calc(100% / $columns);
+  
+  .container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+  
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+  
+      [class*='col-'] {
+        min-height: 100px;
+        padding: 0 $gutters;
+      }
+  
+      @for $i from 1 through $columns {
+        .col-#{$i} {
+          width: $base-column-size * $i;
+        }
+      }
+    }
+  }
+  

@@ -11,7 +11,7 @@ export default function Nav() {
             <ul>
               <li>
                 <NavLink
-                  to="/promo"
+                  to="/special"
                   style={({ isActive }) =>
                     isActive ? { color: "tomato" } : {color:"rgb(251, 161, 70)"}
                   }

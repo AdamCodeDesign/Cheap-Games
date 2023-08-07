@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import GameList from "../components/GameList";
 import Browser from "../components/Browser";
 
 export default function PC() {
+  //tu state - state, funkcjeDoZmiany
+  const [data, setData] = useState(null);
   return (
     <>
-      <Browser />
-      <GameList filter = "platform=3"/>
+      <Browser data={data} />
+      <GameList filter="platform=3" save={(d) => setData(d)} />
     </>
   );
 }

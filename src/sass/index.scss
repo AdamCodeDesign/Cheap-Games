@@ -2,6 +2,8 @@
 @use "placeholders" as *;
 @import "mixins";
 @import "browser";
+@import "grid";
+
 
 :root {
   font-family: Arial, sans-serif;
@@ -41,13 +43,9 @@ sup {
   padding: 0;
 }
 
-.container {
-  width: 1600px;
-  margin: 0 auto;
-}
 
 .header {
-  height: 80px;
+  height: 60px;
   position: fixed;
   top: 0;
   width: 100%;
@@ -103,14 +101,14 @@ sup {
 .main {
   text-align: center;
   font-size: 1em;
-  margin-top: 100px;
+  margin-top: 60px;
   * {
     width: 100%;
     margin: 0 auto;
   }
 
   .main_container {
-    width: 70%;
+    width: 100%;
 
     .gameList_container {
       display: flex;
@@ -253,7 +251,5 @@ sup {
 .footer {
   height: 40px;
   background-color: $basic-ascent-color;
-  position: fixed;
-  bottom: 0;
   width: 100%;
 }

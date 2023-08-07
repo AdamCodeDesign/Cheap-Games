@@ -13,7 +13,7 @@ import Contact from "../pages/Contact";
 import Bucket from "../pages/Bucket";
 import Login from "../pages/Login";
 import ShopRules from "../pages/ShopRules";
-import Promo from "../pages/Promo";
+import SpecialOffers from "../pages/SpecialOffers";
 import NewGames from "../pages/NewGames";
 import PC from "../pages/PC";
 import Playstation from "../pages/Playstation";
@@ -28,12 +28,12 @@ export default function Main() {
         <div className="main_container container">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/info" element={<GameInfo />} />
+          <Route path="/info/:id" element={<GameInfo />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/bucket" element={<Bucket />} />
           <Route path="/login" element={<Login />} />
           <Route path="/rules" element={<ShopRules />} />
-          <Route path="/promo" element={<Promo />} />
+          <Route path="/special" element={<SpecialOffers />} />
           <Route path="/new" element={<NewGames />} />
           <Route path="/pc" element={<PC />} />
           <Route path="/playstation" element={<Playstation />} />

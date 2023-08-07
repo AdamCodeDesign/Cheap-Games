@@ -2,8 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
-
-export default function GameList({ filter }) {
+export default function GameList({ filter, save }) {
   const [list, setList] = useState(null);
   const moby = "/moby/games?&";
   const filterGame = filter;
@@ -16,14 +15,15 @@ export default function GameList({ filter }) {
         }
       })
       .then((data) => {
-        console.log("Lista gierek", data);
+        console.log("Lista wszystkich gierek", data);
 
         setList(data);
       });
+    save(filterGame);
   }, [filterGame]);
 
-  function AddToBucket(){
-    return console.log("dodano do koszyka")
+  function AddToBucket() {
+    return console.log("dodano do koszyka");
   }
 
   return (
@@ -32,7 +32,9 @@ export default function GameList({ filter }) {
         {list?.games?.map((game) => (
           <section className="gameBox" key={game.title}>
             <div className="gameBox_img">
-            <NavLink to="/info"><img className="gameImg" src={game.sample_cover.image}></img></NavLink>
+              <NavLink to={`/info/${game.game_id}`}>
+                <img className="gameImg" src={game.sample_cover.image}></img>
+              </NavLink>
             </div>
             <article className="gameContent">
               <div className="gameTitle">
@@ -42,7 +44,9 @@ export default function GameList({ filter }) {
                   )}
                   <div className="points">{game.moby_score}</div>
                 </div>
-                <NavLink to="/info"><h6>{game.title}</h6></NavLink>
+                <NavLink to={`/info/${game.game_id}`}>
+                  <h6>{game.title}</h6>
+                </NavLink>
                 <p className="platform_name">
                   {game.platforms.map((el) => el.platform_name).join(" , ")}
                 </p>
@@ -57,7 +61,7 @@ export default function GameList({ filter }) {
               <div className="addGame">
                 <button className="addGame_btn" onClick={AddToBucket}>
                   <img src="src/assets/red-cross.svg" alt="add" />
-                  </button>
+                </button>
               </div>
             </article>
           </section>
