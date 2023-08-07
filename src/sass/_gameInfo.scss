@@ -1,3 +1,23 @@
-.gameInfo_container{
-    width: 100%;
+@use "variables" as *;
+
+
+.gameInfo_container {
+  width: 100%;
+
+  .screenshots {
+    display: block;
+    overflow: auto;
+    white-space: nowrap;
+    padding: 10px;
+    border: 2px solid $basic-ascent-color;
+    border-radius: 60px;
+    background-color: black;
+
+    .boxImg {
+      padding: 30px;
+      height: 600px;
+      width: 800px;
+      border-radius: 60px;
+    }
+  }
 }

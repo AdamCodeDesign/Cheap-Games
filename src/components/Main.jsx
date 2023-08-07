@@ -22,13 +22,14 @@ import AllGames from "../pages/AllGames";
 import GameInfo from "../pages/GameInfo";
 
 export default function Main() {
+
   return (
     <>
       <main className="main">
         <div className="main_container container">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/info/:id" element={<GameInfo />} />
+          <Route path="/info/:id"element={<GameInfo />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/bucket" element={<Bucket />} />
           <Route path="/login" element={<Login />} />

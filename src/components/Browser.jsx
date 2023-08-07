@@ -34,19 +34,19 @@ const Browser = ({ object, error, data }) => {
           result.map((game) => (
             <section className="gameBox" key={game.title}>
               <div className="gameBox_img">
-                <NavLink to={`/info/${game.game_id}`}>
+                <NavLink to={`/info/:${game.game_id}`}>
                   <img className="gameImg" src={game.sample_cover.image}></img>
                 </NavLink>
               </div>
               <article className="gameContent">
-                <div className="gameTitle">
+                <div className="gameHeader">
                   <div className="ratingPoints">
                     {game.moby_score && (
                       <img src="src/assets/star-sharp.svg" alt="star" />
                     )}
                     <div className="points">{game.moby_score}</div>
                   </div>
-                  <NavLink to={`/info/${game.game_id}`}>
+                  <NavLink to={`/info/:${game.game_id}`}>
                     <h6>{game.title}</h6>
                   </NavLink>
                   <p className="platform_name">

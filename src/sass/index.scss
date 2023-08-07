@@ -3,6 +3,7 @@
 @import "mixins";
 @import "browser";
 @import "grid";
+@import "gameInfo";
 
 
 :root {
@@ -97,6 +98,10 @@ sup {
     @include links();
   }
 }
+.gameTitle {
+  font-size: 1em;
+  color: rgb(236, 156, 51);
+}
 
 .main {
   text-align: center;
@@ -175,17 +180,14 @@ sup {
           flex-direction: column;
           justify-content: space-evenly;
 
-          .gameTitle {
+          .gameHeader{
             height: 40%;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             row-gap: 20px;
 
-            h6 {
-              font-size: 1em;
-              color: rgb(236, 156, 51);
-            }
+            
             p {
               font-size: 0.5em;
             }

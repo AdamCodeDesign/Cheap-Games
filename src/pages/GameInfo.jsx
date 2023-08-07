@@ -31,21 +31,40 @@ export default function GameInfo() {
   return (
     <>
       {error && <div>{error}</div>}
-      {list?.games?.map((game) => (
-        <section className="gameInfo_container container row">
-          <section className="gameContent col-8">
-            <div className="screenshots col-12">screenshots</div>
-            <div className="description col-12">opis gry sciagniety z bazy</div>
+      {list && (
+        <section className="gameInfo_container container">
+                        <h1 className="gameTitle" style={{fontSize:"3em"}}>"{list.title}"</h1>
+          <section className="gameImages row">
+            <div className="screenshots col-12">
+              {list?.sample_screenshots?.map((image, idx) => (
+                <img
+                  src={image.image}
+                  alt="image"
+                  className="boxImg"
+                  key={idx}
+                />
+              ))}
+            </div>
           </section>
-          <section className="gameBuy col-4">
-            <h1>{game.title}</h1>
-            <p>{game.genres.map((genre) => genre.genre_name).join(" , ")}</p>
-            <p>price</p>
-            <button>Buy</button>
-            <button>add to cart</button>
+          <section className="gameContent row">
+            <section className="description col-8">
+              <div className="col-8">{list.description}</div>
+            </section>
+            <section className="gameBuy col-4">
+              <h1>{list.title}</h1>
+              <p>price</p>
+              <p>{list.moby_score}</p>
+              <div>
+                {list?.genres?.map((genre) => (
+                  <p key={genre.genre_id}>{genre.genre_name}</p>
+                ))}
+              </div>
+              <button>Buy</button>
+              <button>add to cart</button>
+            </section>
           </section>
         </section>
-      ))}
+      )}
     </>
   );
 }

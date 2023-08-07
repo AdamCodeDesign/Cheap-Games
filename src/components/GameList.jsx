@@ -1,11 +1,12 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink , useParams} from "react-router-dom";
 
 export default function GameList({ filter, save }) {
   const [list, setList] = useState(null);
   const moby = "/moby/games?&";
   const filterGame = filter;
+
 
   useEffect(() => {
     fetch(moby + filterGame)
@@ -37,7 +38,7 @@ export default function GameList({ filter, save }) {
               </NavLink>
             </div>
             <article className="gameContent">
-              <div className="gameTitle">
+              <div className="gameHeader">
                 <div className="ratingPoints">
                   {game.moby_score && (
                     <img src="src/assets/star-sharp.svg" alt="star" />
@@ -45,7 +46,7 @@ export default function GameList({ filter, save }) {
                   <div className="points">{game.moby_score}</div>
                 </div>
                 <NavLink to={`/info/${game.game_id}`}>
-                  <h6>{game.title}</h6>
+                  <h6 className="gameTitle">{game.title}</h6>
                 </NavLink>
                 <p className="platform_name">
                   {game.platforms.map((el) => el.platform_name).join(" , ")}
