@@ -4,12 +4,12 @@ import { NavLink , useParams} from "react-router-dom";
 
 export default function GameList({ filter, save }) {
   const [list, setList] = useState(null);
-  const moby = "/moby/games?&";
+  const rawgApi = "https://api.rawg.io/api/games?&";
   const filterGame = filter;
 
 
   useEffect(() => {
-    fetch(moby + filterGame)
+    fetch(rawgApi + filterGame + "&page_size=40&key=ded91ea1e19a4fe0b8f17f53458bc572")
       .then((response) => {
         if (response.ok) {
           return response.json();
@@ -20,8 +20,11 @@ export default function GameList({ filter, save }) {
 
         setList(data);
       });
-    save(filterGame);
+    save(list);
   }, [filterGame]);
+
+
+  
 
   function AddToBucket() {
     return console.log("dodano do koszyka");
@@ -30,28 +33,28 @@ export default function GameList({ filter, save }) {
   return (
     <>
       <section className="gameList_container">
-        {list?.games?.map((game) => (
-          <section className="gameBox" key={game.title}>
+        {list?.results?.map((game) => (
+          <section className="gameBox" key={game.name}>
             <div className="gameBox_img">
-              <NavLink to={`/info/${game.game_id}`}>
-                <img className="gameImg" src={game.sample_cover.image}></img>
+              <NavLink to={`/info/${game.id}`}>
+                <img className="gameImg" src={game.background_image}></img>
               </NavLink>
             </div>
             <article className="gameContent">
               <div className="gameHeader">
                 <div className="ratingPoints">
-                  {game.moby_score && (
+                  {game.rating && (
                     <img src="src/assets/star-sharp.svg" alt="star" />
                   )}
-                  <div className="points">{game.moby_score}</div>
+                  <div className="points">{game.rating}</div>
                 </div>
-                <NavLink to={`/info/${game.game_id}`}>
-                  <h6 className="gameTitle">{game.title}</h6>
+                <NavLink to={`/info/${game.id}`}>
+                  <h6 className="gameTitle">{game.name}</h6>
                 </NavLink>
                 <p className="platform_name">
-                  {game.platforms.map((el) => el.platform_name).join(" , ")}
+                  {game.platforms.map((el) => el.platform.name).join(" , ")}
                 </p>
-                <p>{game.genres[0].genre_name}</p>
+                <p>{game.genres[0].name}</p>
               </div>
               <div className="gamePrice">
                 <p>
