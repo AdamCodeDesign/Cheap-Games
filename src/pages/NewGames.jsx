@@ -3,8 +3,8 @@ import Browser from "../components/Browser";
 import GameList from "../components/GameList";
 
 export default function NewGames() {
-  const [list, setList] = useState([]);
-  const [error, setError] = useState("");
+  // const [list, setList] = useState([]);
+  // const [error, setError] = useState("");
 
   // useEffect(() => {
   //   fetch("/moby/games?")
@@ -40,8 +40,8 @@ export default function NewGames() {
 
   return (
     <>
-      <Browser object={list} error = {error}/>
-      <GameList save={(d) => setList(d)}/>
+      <Browser />
+      {/* <GameList/> */}
     </>
   );
 }

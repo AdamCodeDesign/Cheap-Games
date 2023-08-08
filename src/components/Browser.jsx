@@ -1,14 +1,31 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
-const Browser = ({ object, error, data }) => {
-
-  
+const Browser = ({ error, filter }) => {
+  const [list, setList] = useState(null);
+  const rawgApi = "https://api.rawg.io/api/games?&";
+  const filterGame = filter;
   const [searchQuery, setSearchQuery] = useState("");
-  const [result, setResult] = useState(object);
-  console.log(data);
+  const [result, setResult] = useState(null)
+
+
+  useEffect(() => {
+    fetch(rawgApi + filterGame + "&page_size=40&key=ded91ea1e19a4fe0b8f17f53458bc572")
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        }
+      })
+      .then((data) => {
+        console.log("Lista wszystkich gierek", data);
+
+        setList(data);
+      });
+  }, [filterGame]);
+  
+  
   const handleSearch = () => {
-    const filteredGames= data.filter((game) =>
+    const filteredGames= list.results.filter((game) =>
       game.name.toLowerCase().includes(searchQuery)
     );
     setResult(filteredGames);
@@ -30,11 +47,10 @@ const Browser = ({ object, error, data }) => {
           handleSearch(e.target.value);
         }}
       />
-      <section className="gameList_container">
-        {error && <div>{error}</div>}
-        {result &&
-          result.map((game) => (
-            <section className="gameBox" key={game.name}>
+     <section className="gameList_container">
+      
+        {result?.map((game) => (
+          <section className="gameBox" key={game.name}>
             <div className="gameBox_img">
               <NavLink to={`/info/${game.id}`}>
                 <img className="gameImg" src={game.background_image}></img>
@@ -69,7 +85,7 @@ const Browser = ({ object, error, data }) => {
               </div>
             </article>
           </section>
-          ))}
+        ))}
       </section>
     </div>
   );
