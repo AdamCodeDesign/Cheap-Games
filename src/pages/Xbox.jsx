@@ -1,7 +1,11 @@
-import React from 'react'
+import React from 'react';
+import Browser from '../components/Browser';
 
 export default function Xbox() {
   return (
-    <div>Xbox Games</div>
-  )
+    <>
+      {/* <Browser filter="parent_platforms=3" /> */}
+      <Browser filter="?&parent_platforms=3"/>
+    </>
+  );
 }

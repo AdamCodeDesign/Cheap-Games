@@ -7,7 +7,7 @@ export default function PC() {
   
   return (
     <>
-      <Browser filter="parent_platforms=1" />
+      <Browser filter="?&parent_platforms=1" />
     </>
   );
 }

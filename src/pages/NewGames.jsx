@@ -5,7 +5,7 @@ export default function NewGames() {
  
   return (
     <>
-      <Browser filter = "dates=2023-01-01,2023-08-09"/>
+      <Browser filter = "?&dates=2023-01-01,2023-08-09"/>
     </>
   );
 }

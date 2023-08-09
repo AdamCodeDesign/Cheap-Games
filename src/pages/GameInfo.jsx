@@ -4,10 +4,11 @@ import { useParams } from "react-router-dom";
 export default function GameInfo() {
   const [list, setList] = useState([]);
   const [error, setError] = useState("");
+  const [screen, setScreen] = useState(null)
   const { id } = useParams();
 
   useEffect(() => {
-    fetch(`/moby/games/${id}`)
+    fetch(`https://api.rawg.io/api/games/${id}?&page_size=40&key=ded91ea1e19a4fe0b8f17f53458bc572`)
       .then((response) => {
         if (response.ok) {
           return response.json();
@@ -27,21 +28,43 @@ export default function GameInfo() {
           setList(data);
         }
       });
+      fetch(`https://api.rawg.io/api/games/${id}/screenshots?&page_size=40&key=ded91ea1e19a4fe0b8f17f53458bc572`)
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        }
+        return {
+          error: "Loading screens...",
+        };
+      })
+      .then((data) => {
+        console.log({ data });
+        if (data.error) {
+          setScreen([]);
+          setError(data.error);
+        } else {
+          setError("");
+          console.log("Lista screenów", data);
+          setScreen(data);
+        }
+      });
+
+
   }, []);
   return (
     <>
       {error && <div>{error}</div>}
       {list && (
         <section className="gameInfo_container container">
-                        <h1 className="gameTitle" style={{fontSize:"3em"}}>"{list.title}"</h1>
+                        <h1 className="gameTitle" style={{fontSize:"3em"}}>"{list.name}"</h1>
           <section className="gameImages row">
             <div className="screenshots col-12">
-              {list?.sample_screenshots?.map((image, idx) => (
+              {screen?.results?.map((image) => (
                 <img
                   src={image.image}
                   alt="image"
                   className="boxImg"
-                  key={idx}
+                  key={image.id}
                 />
               ))}
             </div>

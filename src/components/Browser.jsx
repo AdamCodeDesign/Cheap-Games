@@ -1,39 +1,51 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
-const Browser = ({ error, filter }) => {
-  const [list, setList] = useState(null);
-  const rawgApi = "https://api.rawg.io/api/games?&";
+const Browser = ({ filter }) => {
+  const [list, setList] = useState([]);
+  const rawgApi = "https://api.rawg.io/api/games";
   const filterGame = filter;
   const [searchQuery, setSearchQuery] = useState("");
-  const [result, setResult] = useState(null)
-
+  const [result, setResult] = useState(null);
+  const [error, setError] = useState("");
 
   useEffect(() => {
-    fetch(rawgApi + filterGame + "&page_size=40&key=ded91ea1e19a4fe0b8f17f53458bc572")
+    fetch(
+      rawgApi + filterGame + "&page_size=40&key=ded91ea1e19a4fe0b8f17f53458bc572"
+    )
       .then((response) => {
         if (response.ok) {
           return response.json();
         }
+        return {
+          error: "Something went wrong :(",
+        };
       })
       .then((data) => {
-        console.log("Lista wszystkich gierek", data);
-
-        setList(data);
+        if (data.error) {
+          setList([]);
+          setError(data.error);
+        } else {
+          setError("");
+          setList(data);
+          console.log("Lista wszystkich gierek", data);
+        }
       });
   }, [filterGame]);
-  
-  
-  const handleSearch = () => {
-    const filteredGames= list.results.filter((game) =>
+
+  function handleSearch() {
+    const filteredGames = list.results.filter((game) =>
       game.name.toLowerCase().includes(searchQuery)
     );
     setResult(filteredGames);
+    console.log("to jest result",result)
   };
 
   function AddToBucket() {
     return console.log("dodano do koszyka");
   }
+
+
 
   return (
     <div className="browser">
@@ -47,15 +59,14 @@ const Browser = ({ error, filter }) => {
           handleSearch(e.target.value);
         }}
       />
-     <section className="gameList_container">
-      
+      <section className="gameList_container">
+        {error && <div>{error}</div>}
         {result?.map((game) => (
           <section className="gameBox" key={game.name}>
-            <div className="gameBox_img">
-              <NavLink to={`/info/${game.id}`}>
-                <img className="gameImg" src={game.background_image}></img>
+            
+              <NavLink to={`/info/${game.id}`} style={{display: "inline-block", width:"50%"}}><div className="gameBox_img" style={{backgroundImage:`url(${game.background_image})`, backgroundSize:"cover", backgroundPosition:"center", borderRadius:"5px"}}></div>
               </NavLink>
-            </div>
+            
             <article className="gameContent">
               <div className="gameHeader">
                 <div className="ratingPoints">
@@ -70,7 +81,7 @@ const Browser = ({ error, filter }) => {
                 <p className="platform_name">
                   {game.platforms.map((el) => el.platform.name).join(" , ")}
                 </p>
-                <p>{game.genres[0].name}</p>
+                <p>{game.genres.map(el=> <p>{el.name}</p>)}</p>
               </div>
               <div className="gamePrice">
                 <p>
