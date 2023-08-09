@@ -1,11 +1,13 @@
 @use "variables" as *;
 
-
 .gameInfo_container {
   width: 100%;
 
+  .gameTitle{
+    margin-top: 100px;
+  }
+
   .screenshots {
-    display: block;
     overflow: auto;
     white-space: nowrap;
     padding: 10px;
@@ -14,10 +16,24 @@
     background-color: black;
 
     .boxImg {
-      padding: 30px;
-      height: 600px;
-      width: 800px;
+      display: inline-block;
+      margin: 30px;
+      height: 480px;
+      max-width: 640px;
       border-radius: 60px;
+    }
+  }
+
+  .gameBuy{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .gameTitle{
+      margin: 0;
+    }
+    p{
+      font-style: italic;
     }
   }
 }
