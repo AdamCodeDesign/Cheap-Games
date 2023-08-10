@@ -101,15 +101,15 @@ export default function GameInfo() {
           </section>
           <section className="gameContent row">
             <section className="description col-8">
-              <div className="col-12">{list.description}</div>
+              <div className="col-12">{list.description_raw}</div>
             </section>
             <section className="gameBuy col-4">
               <h1 className="gameTitle">"{list.name}"</h1>
-              <div>price</div>
               <div>
                 {list?.genres?.map((genre) => genre.name
                 ).join(" , ")}
               </div>
+              <div>price</div>
               <button>Buy</button>
               <button>add to cart</button>
             </section>

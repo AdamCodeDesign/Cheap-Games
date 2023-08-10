@@ -5,7 +5,7 @@ export default function NewGames() {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    fetch("https://api.rawg.io/api/games?&dates=2022-01-01,2022-12-31&page_size=40&key=ded91ea1e19a4fe0b8f17f53458bc572")
+    fetch("https://api.rawg.io/api/genres?&dates=2022-01-01,2022-12-31&page_size=40&key=ded91ea1e19a4fe0b8f17f53458bc572")
       .then((response) => {
         if (response.ok) {
           return response.json();

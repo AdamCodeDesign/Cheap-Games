@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect , useCallback} from "react";
 import { NavLink } from "react-router-dom";
 
 const Browser = ({ filter }) => {
@@ -6,8 +6,9 @@ const Browser = ({ filter }) => {
   const rawgApi = "https://api.rawg.io/api/games";
   const filterGame = filter;
   const [searchQuery, setSearchQuery] = useState("");
-  const [result, setResult] = useState(null);
+  const [result, setResult] = useState([]);
   const [error, setError] = useState("");
+  const [genre, setGenre] = useState("");
 
   useEffect(() => {
     fetch(
@@ -27,19 +28,22 @@ const Browser = ({ filter }) => {
           setError(data.error);
         } else {
           setError("");
-          setList(data);
+          setList(data.results);
+          setResult(searchGames(data.results, searchQuery))
           console.log("Lista wszystkich gierek", data);
         }
       });
   }, [filterGame]);
 
-  function handleSearch() {
-    const filteredGames = list.results.filter((game) =>
+  
+    const searchGames = useCallback((fullList, searchQuery)=>{
+      return fullList.filter((game) =>
       game.name.toLowerCase().includes(searchQuery)
     );
-    setResult(filteredGames);
+    },[]);
+   
     console.log("to jest result",result)
-  };
+  
 
   function AddToBucket() {
     return console.log("dodano do koszyka");
@@ -49,6 +53,9 @@ const Browser = ({ filter }) => {
 
   return (
     <div className="browser">
+      <button>RPG</button>
+      <button>ACTION</button>
+      <button>ADVENTURE</button>
       <input
         id="browser_input"
         type="text"
@@ -56,9 +63,10 @@ const Browser = ({ filter }) => {
         value={searchQuery}
         onChange={(e) => {
           setSearchQuery(e.target.value);
-          handleSearch(e.target.value);
+          setResult(searchGames(list, e.target.value))
         }}
       />
+      <button></button>
       <section className="gameList_container">
         {error && <div>{error}</div>}
         {result?.map((game) => (
