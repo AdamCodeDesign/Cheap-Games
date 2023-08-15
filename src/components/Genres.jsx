@@ -25,6 +25,7 @@ export default function Genres({ platform }) {
         } else {
           setError("");
           setGenreList(data.results);
+          setGenre(platform)
           console.log("Lista wszystkich genres", data.results);
         }
       });

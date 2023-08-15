@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import Genres from "./Genres";
 
 const Browser = ({ filter }) => {
-  const [list, setList] = useState([]);
+  // const [list, setList] = useState([]);
   const rawgApi = "https://api.rawg.io/api/games";
   const filterGame = filter;
   const [searchQuery, setSearchQuery] = useState("");
@@ -12,7 +12,7 @@ const Browser = ({ filter }) => {
 
   useEffect(() => {
     fetch(
-      rawgApi + filterGame + "&page_size=40&key=ded91ea1e19a4fe0b8f17f53458bc572"
+      rawgApi + filterGame + `&search=${searchQuery}`+"&page_size=40&key=ded91ea1e19a4fe0b8f17f53458bc572"
     )
       .then((response) => {
         if (response.ok) {
@@ -24,23 +24,24 @@ const Browser = ({ filter }) => {
       })
       .then((data) => {
         if (data.error) {
-          setList([]);
+          setResult([]);
           setError(data.error);
         } else {
           setError("");
-          setList(data.results);
-          setResult(searchGames(data.results, searchQuery))
+          // setList(data.results);
+          // setResult(searchGames(data.results, searchQuery))
+          setResult(data.results)
           console.log("Lista wszystkich gierek", data);
         }
       });
-  }, [filterGame]);
+  }, [filterGame, searchQuery]);
 
   
-    const searchGames = useCallback((fullList, searchQuery)=>{
-      return fullList.filter((game) =>
-      game.name.toLowerCase().includes(searchQuery)
-    );
-    },[]);
+    // const searchGames = useCallback((fullList, searchQuery)=>{
+    //   return fullList.filter((game) =>
+    //   game.name.toLowerCase().includes(searchQuery)
+    // );
+    // },[]);
    
     console.log("to jest result",result)
   
@@ -61,7 +62,7 @@ const Browser = ({ filter }) => {
         value={searchQuery}
         onChange={(e) => {
           setSearchQuery(e.target.value);
-          setResult(searchGames(list, e.target.value))
+          // setResult(searchGames(list, e.target.value))
         }}
       />
       <section className="gameList_container">
@@ -86,7 +87,7 @@ const Browser = ({ filter }) => {
                 <p className="platform_name">
                   {game.platforms.map((el) => el.platform.name).join(" , ")}
                 </p>
-                <p>{game.genres.map(el=> <p>{el.name}</p>)}</p>
+                <div>{game.genres.map(el=> <p key={el.id}>{el.name}</p>)}</div>
               </div>
               <div className="gamePrice">
                 <p>
