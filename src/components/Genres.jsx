@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Browser from "./Browser";
-import { NavLink } from "react-router-dom";
 
-export default function Genres({platform}) {
+export default function Genres({ platform }) {
   const [genreList, setGenreList] = useState([]);
   const [error, setError] = useState("");
-
   const [genre, setGenre] = useState("");
 
   useEffect(() => {
@@ -43,14 +41,14 @@ export default function Genres({platform}) {
       {error && <div>{error}</div>}
       <label>select</label>
       <select value={genre} onChange={switchGenre}>
-        <option value = "?">Wszystkie</option>
+        <option value={platform}>Wszystkie</option>
         {genreList?.map((el) => (
-          <option value={`?&genres=${el.slug}${platform}`} key={el.slug}>
+          <option value={`${platform}&genres=${el.slug}`} key={el.slug}>
             {el.name}
           </option>
         ))}
       </select>
-      <Browser filter={genre}/>
+      <Browser filter={genre} />
     </>
   );
 }
