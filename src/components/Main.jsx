@@ -20,6 +20,7 @@ import Playstation from "../pages/Playstation";
 import Xbox from "../pages/Xbox";
 import AllGames from "../pages/AllGames";
 import GameInfo from "../pages/GameInfo";
+import Genres from "./Genres";
 
 export default function Main() {
 
@@ -29,6 +30,7 @@ export default function Main() {
         <div className="main_container container">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/genres" element={<Genres />} />
           <Route path="/info/:id"element={<GameInfo />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/bucket" element={<Bucket />} />

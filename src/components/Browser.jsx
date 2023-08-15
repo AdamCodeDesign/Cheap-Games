@@ -1,5 +1,6 @@
 import React, { useState, useEffect , useCallback} from "react";
 import { NavLink } from "react-router-dom";
+import Genres from "./Genres";
 
 const Browser = ({ filter }) => {
   const [list, setList] = useState([]);
@@ -8,7 +9,6 @@ const Browser = ({ filter }) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [result, setResult] = useState([]);
   const [error, setError] = useState("");
-  const [genre, setGenre] = useState("");
 
   useEffect(() => {
     fetch(
@@ -52,10 +52,8 @@ const Browser = ({ filter }) => {
 
 
   return (
+    <>
     <div className="browser">
-      <button>RPG</button>
-      <button>ACTION</button>
-      <button>ADVENTURE</button>
       <input
         id="browser_input"
         type="text"
@@ -66,7 +64,6 @@ const Browser = ({ filter }) => {
           setResult(searchGames(list, e.target.value))
         }}
       />
-      <button></button>
       <section className="gameList_container">
         {error && <div>{error}</div>}
         {result?.map((game) => (
@@ -107,6 +104,7 @@ const Browser = ({ filter }) => {
         ))}
       </section>
     </div>
+    </>
   );
 };
 

@@ -1,10 +1,13 @@
 import React from "react";
 import Browser from "../components/Browser";
+import Genres from "../components/Genres";
 
 export default function AllGames() {
   return (
     <>
-      <Browser filter= "?"/>
+      <Genres platform="" />
+
+      {/* <Browser filter= "?"/> */}
     </>
   );
 }
