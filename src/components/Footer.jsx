@@ -7,7 +7,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer_container container">
         <ul>
-          <NavLink to="/">
+          <NavLink to="/special">
             {" "}
             <span style={{ color: "tomato", fontSize: "1.8em" }}>C</span>
             heap <span style={{ color: "tomato", fontSize: "1.8em" }}>G</span>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Browser from "./Browser";
 
-export default function Genres({ platform }) {
+export default function Genres({ platform , sale}) {
   const [genreList, setGenreList] = useState([]);
   const [error, setError] = useState("");
   const [genre, setGenre] = useState("");
@@ -25,7 +25,7 @@ export default function Genres({ platform }) {
         } else {
           setError("");
           setGenreList(data.results);
-          setGenre(platform)
+          setGenre(platform);
           console.log("Lista wszystkich genres", data.results);
         }
       });
@@ -49,7 +49,7 @@ export default function Genres({ platform }) {
           </option>
         ))}
       </select>
-      <Browser filter={genre} />
+      {genre && <Browser filter={genre} sale={sale}/>}
     </>
   );
 }

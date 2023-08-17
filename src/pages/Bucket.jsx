@@ -1,7 +1,39 @@
-import React from "react";
+import React, { useEffect, useState } from "react"
+import supabase from "../config/supabaseClient"
 
 export default function Bucket() {
+  console.log("to jest supabase", supabase);
+  const [fetchError, setFetchError] = useState("");
+  const [gamesList, setGamesList] = useState([]);
+
+  useEffect(() => {
+    const fetchGames = async () => {
+      const {data, error} = await supabase
+      .from('games')
+      .select("*")
+
+      if(error){
+        setFetchError("Could not fetch games")
+        setGamesList([])
+        console.log(error)
+      }
+      if(data){
+        setGamesList(data)
+        setFetchError("")
+        console.log("to jest games", data)
+      }
+    };
+
+    fetchGames();
+  }, []);
+
   return (
-    <><h1>to jest bucket</h1></>
+    <>
+      <h1>to jest bucket</h1>
+      {fetchError&& (<p>{fetchError}</p>)}
+      {gamesList&& (
+        <div>{gamesList.map(game => <p>{game.title}-{game.gatunek}</p>)}</div>
+      )}
+    </>
   );
 }

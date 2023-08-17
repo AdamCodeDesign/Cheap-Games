@@ -38,5 +38,4 @@ do zrobienia zostało
 
 notatki
 
-spróbowac zrobic genres + browser - pzekazac do browser 2 propsy, genres i filter do url
-ewentualnie zrobic w propsie do browsera funkcje jak to zrobil Kuba
+robie teraz addGameToBucket w GameInfo

@@ -5,7 +5,6 @@
 @import "grid";
 @import "gameInfo";
 
-
 :root {
   font-family: Arial, sans-serif;
   line-height: 1.5;
@@ -43,7 +42,6 @@ sup {
   margin: 0;
   padding: 0;
 }
-
 
 .header {
   height: 60px;
@@ -174,14 +172,13 @@ sup {
           flex-direction: column;
           justify-content: space-evenly;
 
-          .gameHeader{
+          .gameHeader {
             height: 50%;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             row-gap: 15px;
 
-            
             p {
               font-size: 0.5em;
             }
@@ -203,6 +200,20 @@ sup {
 
             span {
               font-size: 0.5em;
+            }
+
+            .salePrice {
+              position: relative;
+              &:after {
+                content: "";
+                height: 0px;
+                width: 40px;
+                position: absolute;
+                border: 1px solid red;
+                transform: rotate(-15deg);
+                top: 42%;
+                right: 42%;
+              }
             }
           }
 

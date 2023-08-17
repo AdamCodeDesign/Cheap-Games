@@ -8,7 +8,6 @@ import {
   useParams,
   useNavigate,
 } from "react-router-dom";
-import Home from "../pages/Home";
 import Contact from "../pages/Contact";
 import Bucket from "../pages/Bucket";
 import Login from "../pages/Login";
@@ -29,7 +28,6 @@ export default function Main() {
       <main className="main">
         <div className="main_container container">
         <Routes>
-          <Route path="/" element={<Home />} />
           <Route path="/genres" element={<Genres />} />
           <Route path="/info/:id"element={<GameInfo />} />
           <Route path="/contact" element={<Contact />} />

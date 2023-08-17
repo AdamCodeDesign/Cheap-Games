@@ -83,7 +83,7 @@ export default function Nav() {
               </li>
             </ul>
             <div className="logo">
-              <NavLink to="/">
+              <NavLink to="/special">
                 <span>C</span>
                 heap <span>G</span>
                 ames

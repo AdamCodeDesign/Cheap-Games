@@ -1,30 +1,12 @@
-import React , {useState, useEffect}from "react";
+import React, { useState, useEffect } from "react";
+import Genres from "../components/Genres";
 
-export default function NewGames() {
-  const [list, setList] = useState([]);
-  const [error, setError] = useState("");
-
-  useEffect(() => {
-    fetch("https://api.rawg.io/api/genres?&page_size=40&key=ded91ea1e19a4fe0b8f17f53458bc572")
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        }
-        return {
-          error: "Loading games...",
-        };
-      })
-      .then((data) => {
-        if (data.error) {
-          setList([]);
-          setError(data.error);
-        } else {
-          setError("");
-          setList(data);
-          console.log("Lista wszystkich gierek", data);
-        }
-      });
-  }, []);
-
-  return <div>Tu będa gry w promocji</div>;
+export default function Special() {
+  const saleDiscount = 0.5;
+  return(
+  <>
+  <h1 style={{fontSize:"3rem", color: "#37BFC9", marginTop:"100px", marginBottom:"50px"}}>Weekendowa promocja na gry z 2018 roku</h1>
+    <Genres platform="?&dates=2018-01-01,2018-12-31&ordering=-rating" sale={saleDiscount}/>
+  </>
+  )
 }
