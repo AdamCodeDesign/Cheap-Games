@@ -38,4 +38,4 @@ do zrobienia zostało
 
 notatki
 
-robie teraz addGameToBucket w GameInfo
+robie teraz addGameToBucket w GameInfo - linijka 94

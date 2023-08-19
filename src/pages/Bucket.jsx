@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react"
-import supabase from "../config/supabaseClient"
+import React, { useEffect, useState } from "react";
+import supabase from "../config/supabaseClient";
 
 export default function Bucket() {
   console.log("to jest supabase", supabase);
@@ -8,19 +8,17 @@ export default function Bucket() {
 
   useEffect(() => {
     const fetchGames = async () => {
-      const {data, error} = await supabase
-      .from('games')
-      .select("*")
+      const { data, error } = await supabase.from("games").select("*");
 
-      if(error){
-        setFetchError("Could not fetch games")
-        setGamesList([])
-        console.log(error)
+      if (error) {
+        setFetchError("Could not fetch games");
+        setGamesList([]);
+        console.log(error);
       }
-      if(data){
-        setGamesList(data)
-        setFetchError("")
-        console.log("to jest games", data)
+      if (data) {
+        setGamesList(data);
+        setFetchError("");
+        console.log("to jest games", data);
       }
     };
 
@@ -30,9 +28,19 @@ export default function Bucket() {
   return (
     <>
       <h1>to jest bucket</h1>
-      {fetchError&& (<p>{fetchError}</p>)}
-      {gamesList&& (
-        <div>{gamesList.map(game => <p>{game.title}-{game.gatunek}</p>)}</div>
+      {fetchError && <p>{fetchError}</p>}
+      {gamesList && (
+        <div>
+          <ul>
+            {gamesList.map((game) => {
+              return (
+                <li key={game.title}>
+                  {game.title}-{game.gatunek}
+                </li>
+              );
+            })}
+          </ul>
+        </div>
       )}
     </>
   );

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import supabase from "../config/supabaseClient";
 
 export default function GameInfo() {
   const [game, setGame] = useState([]);
@@ -13,6 +14,7 @@ export default function GameInfo() {
   const [gatunek, setGatunek] = useState("");
   const [platform, setPlatform] = useState("");
   const [price, setPrice] = useState(null);
+  const [listBucketError, setListBucketError] = useState(null);
 
   useEffect(() => {
     //przy pomocy parametru odnosze sie do ID kliknietej gry - patrz Navlink w Browser
@@ -36,9 +38,14 @@ export default function GameInfo() {
           setError("");
           console.log("Lista gierek", data);
           setGame(data);
+          setTitle(data.name);
+          setGatunek(data.genres?.map((genre) => genre.name).join(" , "));
+          setPlatform(
+            data.parent_platforms?.map((el) => el.platform.name).join(" , ")
+          );
+          setPrice(99);
         }
       });
-
     //sciagam screenshoty
     fetch(
       `https://api.rawg.io/api/games/${id}/screenshots?&page_size=40&key=ded91ea1e19a4fe0b8f17f53458bc572`
@@ -88,7 +95,26 @@ export default function GameInfo() {
       });
   }, []);
 
-  const addGameToBucket = () => {};
+  const addGameToBucket = async () => {
+    if (!title || !gatunek || !platform || !price) {
+      setListError("Could not fetch game from supabase");
+      return;
+    }
+
+    const { data, error } = await supabase
+      .from("games")
+      .insert({ title, gatunek, platform, price });
+
+    if (error) {
+      console.log(error);
+      setListBucketError("Could not send game to bucket");
+    }
+    if (data) {
+      console.log(data);
+      setListBucketError("");
+    }
+  };
+  console.log("to jest price", price);
   return (
     <>
       {error && <div>{error}</div>}
@@ -121,7 +147,7 @@ export default function GameInfo() {
               <div>{game?.genres?.map((genre) => genre.name).join(" , ")}</div>
               <div>price</div>
               <button>Buy</button>
-              <button>add to cart</button>
+              <button onClick={addGameToBucket}>add to cart</button>
             </section>
           </section>
         </section>
