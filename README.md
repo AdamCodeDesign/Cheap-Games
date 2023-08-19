@@ -35,6 +35,7 @@ do zrobienia zostało
 12. Zrobic RWD - media na mobile i desktop-  hamburger menu - w sasie lub react
 11. dodac filtry po gatunku gry obok wyszukiwarki
 12. wrzucic trailer do GameInfo
+13. w koszyku kazda linia ma byc Navlinkiem do gry
 
 notatki
 
