@@ -3,22 +3,32 @@
 .gameInfo_container {
   width: 100%;
 
-  .gameTitle{
+  .gameTitle {
     margin-top: 100px;
   }
+  .trailers {
+    overflow: auto;
+    white-space: nowrap;
+    background-color: black;
+    border-radius: 60px;
 
-  figure {
-    height: 0;
-    padding-bottom: 56.25%; /* 16:9 */
-    position: relative;
-    width: 100%;
-
-    iframe {
-      height: 100%;
-      left: 0;
-      position: absolute;
-      top: 0;
+    figure {
+      display: inline-block;
+      height: 0;
+      padding-bottom: 56.25%; /* 16:9 */
+      position: relative;
       width: 100%;
+      margin: 30px;
+
+
+
+      iframe {
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+      }
     }
   }
 
@@ -39,15 +49,15 @@
     }
   }
 
-  .gameBuy{
+  .gameBuy {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 
-    .gameTitle{
+    .gameTitle {
       margin: 0;
     }
-    p{
+    p {
       font-style: italic;
     }
   }

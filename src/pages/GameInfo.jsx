@@ -124,12 +124,14 @@ export default function GameInfo() {
             "{game.name}"
           </h1>
           <section className="gameImages row">
+            {movies && (
+              <div className="trailers">
+                {movies.map((trailer) => (
+                 <figure><iframe src={trailer.data.max} frameBorder="0"></iframe></figure>
+                ))}
+              </div>
+            )}
             <div className="screenshots col-12">
-              {movies&& (
-                
-              <figure>
-                <iframe src={movies[0].data.max} frameborder="0"></iframe>
-              </figure>)}
               {screen?.results?.map((image) => (
                 <div
                   className="boxImg"

@@ -76,7 +76,7 @@ export default function Bucket() {
             <tbody className="row">     
               {gamesList.map((game) => {
                 return (
-                  <tr className="col-12"key={game.id} style={{borderBottom: "1px solid rgb(256,161,71)", display:"flex", }}>
+                  <tr className="col-12"key={game.id} style={{borderTop: "1px solid rgb(256,161,71)",borderBottom: "1px solid rgb(256,161,71)", display:"flex", }}>
                     <td className="col-3 bucket-list">{game.title}</td>
                     <td className="col-3 bucket-list">{game.gatunek}</td>
                     <td className="col-3 bucket-list">{game.platform}</td>
