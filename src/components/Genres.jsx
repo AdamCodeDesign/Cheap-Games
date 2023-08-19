@@ -40,7 +40,7 @@ export default function Genres({ platform , sale}) {
   return (
     <>
       {error && <div>{error}</div>}
-      <label>select</label>
+      <label>select game genre</label>
       <select value={genre} onChange={switchGenre}>
         <option value={platform}>Wszystkie</option>
         {genreList?.map((el) => (
