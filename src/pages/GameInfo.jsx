@@ -6,7 +6,7 @@ export default function GameInfo() {
   const [game, setGame] = useState([]);
   const [error, setError] = useState("");
   const [screen, setScreen] = useState(null);
-  const [movies, setMovies] = useState(null);
+  const [movies, setMovies] = useState([]);
   const { id } = useParams();
 
   //ustawiam state dla funkcji addGameToBucket
@@ -89,8 +89,8 @@ export default function GameInfo() {
           setError(data.error);
         } else {
           setError("");
-          console.log("Lista movies", data);
-          setMovies(data);
+          console.log("Lista movies", data.results);
+          setMovies(data.results);
         }
       });
   }, []);
@@ -125,6 +125,11 @@ export default function GameInfo() {
           </h1>
           <section className="gameImages row">
             <div className="screenshots col-12">
+              {movies&& (
+                
+              <figure>
+                <iframe src={movies[0].data.max} frameborder="0"></iframe>
+              </figure>)}
               {screen?.results?.map((image) => (
                 <div
                   className="boxImg"
@@ -145,7 +150,7 @@ export default function GameInfo() {
             <section className="gameBuy col-4">
               <h1 className="gameTitle">"{game.name}"</h1>
               <div>{game?.genres?.map((genre) => genre.name).join(" , ")}</div>
-              <div>price</div>
+              <div>{price}pln</div>
               <button>Buy</button>
               <button onClick={addGameToBucket}>add to cart</button>
             </section>

@@ -39,4 +39,4 @@ do zrobienia zostało
 
 notatki
 
-robie teraz addGameToBucket w GameInfo - linijka 94
+robie teraz w GameInfo - linijka 131 - probuje zaimportowac trailera

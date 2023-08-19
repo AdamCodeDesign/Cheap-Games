@@ -7,6 +7,21 @@
     margin-top: 100px;
   }
 
+  figure {
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 */
+    position: relative;
+    width: 100%;
+
+    iframe {
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+  }
+
   .screenshots {
     overflow: auto;
     white-space: nowrap;
