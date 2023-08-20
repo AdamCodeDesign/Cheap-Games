@@ -38,5 +38,6 @@ do zrobienia zostało
 13. w koszyku kazda linia ma byc Navlinkiem do gry
 
 notatki
-
-robie teraz w GameInfo - linijka 131 - probuje zaimportowac trailera
+<!-- jak zrobic zeby suma do zaplaty w koszyku sie aktualizowala na biezaco, narazie zrobilem tylko jak usuwam gre -->
+jak powiazac buttton z glownej strony z tym w Gameinfo
+jak zaktualizowac ceny promo we wszystkich podstronach - tak zeby cena byla przypieta do gry

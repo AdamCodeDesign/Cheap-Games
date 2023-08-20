@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { NavLink } from "react-router-dom";
+import { addGameToBucket } from "../lib/addGameToCart";
 
 const Browser = ({ filter, sale }) => {
   const rawgApi = "https://api.rawg.io/api/games";
@@ -87,14 +88,14 @@ const Browser = ({ filter, sale }) => {
                   <p className="platform_name">
                     {game.platforms?.map((el) => el.platform.name).join(" , ")}
                   </p>
-                  <div>
+                  <div className="game-genres">
                     {game.genres.map((el) => (
                       <p key={el.id}>{el.name}</p>
                     ))}
                   </div>
                 </div>
                 <div className="gamePrice">
-                  {sale ? (
+                  {sale !== 1? (
                     <div>
                       <p
                         className="salePrice"
@@ -119,7 +120,23 @@ const Browser = ({ filter, sale }) => {
                   )}
                 </div>
                 <div className="addGame">
-                  <button className="addGame_btn" onClick={AddToBucket}>
+                  <button
+                    className="addGame_btn"
+                    onClick={async () => {
+                      try {
+                        await addGameToBucket({
+                          title: game.name,
+                          gatunek: game.genres
+                            ?.map((genre) => genre.name)
+                            .join(" , "),
+                          platform:game.platforms?.map((el) => el.platform.name).join(" , "),
+                          price:Math.floor(price * sale),
+                        });
+                      } catch (error) {
+                        setError(error.message);
+                      }
+                    }}
+                  >
                     <img src="src/assets/red-cross.svg" alt="add" />
                   </button>
                 </div>

@@ -4,7 +4,7 @@ import Genres from "../components/Genres";
 export default function AllGames() {
   return (
     <>
-      <Genres platform="?" />
+      <Genres platform="?" sale={1}/>
     </>
   );
 }

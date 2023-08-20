@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import supabase from "../config/supabaseClient";
+import { addGameToBucket } from "../lib/addGameToCart";
 
 export default function GameInfo() {
   const [game, setGame] = useState([]);
@@ -95,25 +96,6 @@ export default function GameInfo() {
       });
   }, []);
 
-  const addGameToBucket = async () => {
-    if (!title || !gatunek || !platform || !price) {
-      setListError("Could not fetch game from supabase");
-      return;
-    }
-
-    const { data, error } = await supabase
-      .from("games")
-      .insert({ title, gatunek, platform, price });
-
-    if (error) {
-      console.log(error);
-      setListBucketError("Could not send game to bucket");
-    }
-    if (data) {
-      console.log(data);
-      setListBucketError("");
-    }
-  };
   console.log("to jest price", price);
   return (
     <>
@@ -127,7 +109,14 @@ export default function GameInfo() {
             {movies && (
               <div className="trailers">
                 {movies.map((trailer) => (
-                 <figure><iframe src={trailer.data.max} frameBorder="0"></iframe></figure>
+                  <figure key={trailer.id}>
+                    <video
+                      src={trailer.data[480]}
+                      frameBorder="0"
+                      controls
+                      poster={trailer.preview}
+                    />
+                  </figure>
                 ))}
               </div>
             )}
@@ -141,6 +130,7 @@ export default function GameInfo() {
                     backgroundPosition: "center",
                     borderRadius: "60px",
                   }}
+                  key={image.id}
                 ></div>
               ))}
             </div>
@@ -154,7 +144,17 @@ export default function GameInfo() {
               <div>{game?.genres?.map((genre) => genre.name).join(" , ")}</div>
               <div>{price}pln</div>
               <button>Buy</button>
-              <button onClick={addGameToBucket}>add to cart</button>
+              <button
+                onClick={async () => {
+                  try {
+                    await addGameToBucket({ title, gatunek, platform, price });
+                  } catch (error) {
+                    setError(error.message)
+                  }
+                }}
+              >
+                add to cart
+              </button>
             </section>
           </section>
         </section>
