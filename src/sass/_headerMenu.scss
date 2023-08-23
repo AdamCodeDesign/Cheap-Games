@@ -1,0 +1,105 @@
+@use "variables" as *;
+@use "placeholders" as *;
+@import "mixins";
+
+/* Reset some default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Styling for the navbar */
+.navlist {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  background-color: $basic-ascent-color;
+  backface-visibility: hidden;
+
+
+    z-index: 2;
+
+  ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    // z-index: 1;
+  }
+
+  li {
+    list-style: none;
+
+    a {
+      @include links();
+    }
+  }
+}
+
+/* Styling for the hamburger menu */
+.hamburger {
+  display: none;
+}
+
+/* Styling for the menu items */
+.hamburger_menu {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  li {
+    list-style: none;
+
+    a {
+      @include links();
+    }
+  }
+}
+
+/* Media query for responsive design */
+@media (max-width: 797px) {
+  .navlist.active .hamburger_menu {
+    display: none;
+  }
+
+  .hamburger_menu {
+    list-style: none;
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    width: 200px;
+    top: 60px;
+    right: 0;
+    background-color: $basic-ascent-color;
+    padding: 10px;
+    backface-visibility: hidden;
+
+  }
+
+  .hamburger {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    color: $basic-orange-color;
+
+    &:hover{
+      .bar{
+        background-color: $basic-orange-color;
+
+      }
+    }
+
+    .bar {
+      width: 30px;
+      height: 3px;
+      background-color: white;
+      margin: 3px 0;
+    }
+  }
+
+  li {
+    margin: 5px 0;
+  }
+}

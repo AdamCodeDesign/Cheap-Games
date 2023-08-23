@@ -109,12 +109,13 @@ export default function GameInfo() {
             {movies && (
               <div className="trailers">
                 {movies.map((trailer) => (
-                  <figure key={trailer.id}>
+                  <figure key={trailer.id} >
                     <video
                       src={trailer.data[480]}
                       frameBorder="0"
                       controls
                       poster={trailer.preview}
+                      style={{zIndex:9997, position:"absolute"}}
                     />
                   </figure>
                 ))}

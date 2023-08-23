@@ -54,6 +54,8 @@ const Browser = ({ filter, sale }) => {
           onChange={(e) => {
             setSearchQuery(e.target.value);
           }}
+
+          style={{width:"400px", height:"30px", fontSize:"1em"}}
         />
         <section className="gameList_container">
           {error && <div>{error}</div>}

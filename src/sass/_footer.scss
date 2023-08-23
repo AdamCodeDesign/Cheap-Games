@@ -1,0 +1,29 @@
+@use "variables" as *;
+@use "placeholders" as *;
+@import "mixins";
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    height: 30px;
+    background-color: $basic-ascent-color;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    list-style: none;
+    padding: 0px 10px;
+    ul {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0;
+      // z-index: 1;
+      li {
+        list-style: none;
+      }
+    }
+  
+    a {
+      @include links();
+    }
+  }

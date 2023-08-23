@@ -1,6 +1,7 @@
 Stronka ze sklepem internetowym Cheap Games
 
 Plan projektu
+
 <!-- 2. Stworzyc wyszukiwarkę na kazdej stronie która bedzie szukała gry na aktualnej stronce - pytanie nr 2. -->
 <!-- 3. Stworzyc stronke z Detalami wybranej gry -->
 <!-- 4. box z grą - klikając w img lub title ma nas przeniesc do karty z detalami gry -->
@@ -25,19 +26,21 @@ pytania do mentora
 <!-- 6. Jak połączyc GameInfo z kliknietą grą zeby zaciagal np title wlasnie z tej gry? -->
 <!-- 7. Czy robic grid layout dla mobile i desktop czy jeszcze na tableta i laptopa? -->
 
-
 do zrobienia zostało
-
 
 9. Dokonczyc GameInfo
 10. Zrobic koszyk
 11. Zrobic login
-12. Zrobic RWD - media na mobile i desktop-  hamburger menu - w sasie lub react
-11. dodac filtry po gatunku gry obok wyszukiwarki
-12. wrzucic trailer do GameInfo
-13. w koszyku kazda linia ma byc Navlinkiem do gry
+12. Zrobic RWD - media na mobile i desktop- hamburger menu - w sasie lub react
+13. dodac filtry po gatunku gry obok wyszukiwarki
+14. wrzucic trailer do GameInfo
+15. w koszyku kazda linia ma byc Navlinkiem do gry
 
 notatki
+
 <!-- jak zrobic zeby suma do zaplaty w koszyku sie aktualizowala na biezaco, narazie zrobilem tylko jak usuwam gre -->
+
 jak powiazac buttton z glownej strony z tym w Gameinfo
 jak zaktualizowac ceny promo we wszystkich podstronach - tak zeby cena byla przypieta do gry
+
+probuje zmienic odleglosc miedzy rozwijanym menu a całą zawartoscia Menu tak zeby nie nachodzily na siebie. Jestem na Nav 11, chce uzyc state do zmiany stylu.

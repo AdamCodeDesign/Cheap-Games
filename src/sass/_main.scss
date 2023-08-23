@@ -1,0 +1,16 @@
+.main {
+    text-align: center;
+    font-size: 1em;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    z-index: 0;
+    * {
+      width: 100%;
+      margin: 0 auto;
+    }
+  
+    .main_container {
+      width: 100%;
+      z-index: 0;
+    }
+}
