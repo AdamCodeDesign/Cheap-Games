@@ -1,6 +1,7 @@
 @use "variables" as *;
 @use "placeholders" as *;
 @import "mixins";
+@import "gameList";
 
 /* Reset some default margin and padding */
 * {
@@ -62,18 +63,28 @@
   .navlist.active .hamburger_menu {
     display: none;
   }
+ 
 
   .hamburger_menu {
     list-style: none;
-    display: none;
+    display: flex;
     flex-direction: column;
     position: absolute;
-    width: 200px;
+    width: 100%;
     top: 60px;
     right: 0;
     background-color: $basic-ascent-color;
     padding: 10px;
-    backface-visibility: hidden;
+
+    li {
+      margin: 0;
+      width: 100%;
+      text-align: center;
+  
+      &:hover{
+        background-color: $basic-bg-color;
+      }
+    }
 
   }
 
@@ -83,6 +94,7 @@
     flex-direction: column;
     cursor: pointer;
     color: $basic-orange-color;
+    margin-right: 90px;
 
     &:hover{
       .bar{
@@ -99,7 +111,5 @@
     }
   }
 
-  li {
-    margin: 5px 0;
-  }
+ 
 }
