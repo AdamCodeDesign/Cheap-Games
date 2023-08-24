@@ -16,19 +16,11 @@
 
     figure {
       display: inline-block;
-      height: 0;
+      height: 480px;
       padding-bottom: 56.25%; /* 16:9 */
       position: relative;
       width: 100%;
-      margin: 30px;
-
-      video {
-        height: 100%;
-        left: 0;
-        position: absolute;
-        top: 0;
-        width: 100%;
-      }
+      padding: 30px;
     }
   }
 

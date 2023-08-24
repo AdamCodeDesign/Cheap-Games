@@ -108,14 +108,15 @@ export default function GameInfo() {
           <section className="gameImages row">
             {movies && (
               <div className="trailers">
-                {movies.map((trailer) => (
-                  <figure key={trailer.id} >
+                {movies.map((trailer, idx) => (
+                  <figure key={trailer.id}>
                     <video
                       src={trailer.data[480]}
                       frameBorder="0"
                       controls
                       poster={trailer.preview}
-                      style={{zIndex:9997, position:"absolute"}}
+                      autoPlay={idx === 0}
+                      muted
                     />
                   </figure>
                 ))}
@@ -150,7 +151,7 @@ export default function GameInfo() {
                   try {
                     await addGameToBucket({ title, gatunek, platform, price });
                   } catch (error) {
-                    setError(error.message)
+                    setError(error.message);
                   }
                 }}
               >
