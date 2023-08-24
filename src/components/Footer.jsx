@@ -15,7 +15,6 @@ export default function Footer() {
           </NavLink>
           <NavLink to="/contact" style={({ isActive }) => isActive ? { color: 'tomato' } : {}} end> contact </NavLink>
           <NavLink to="/rules" style={({ isActive }) => isActive ? { color: 'tomato' } : {}} end> Shop rules </NavLink>
-          <NavLink to="/login" style={({ isActive }) => isActive ? { color: 'tomato' } : {}} end> login </NavLink>
         </ul>
       </div>
       </footer>
