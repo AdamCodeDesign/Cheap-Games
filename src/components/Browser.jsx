@@ -8,6 +8,7 @@ const Browser = ({ filter, sale }) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [result, setResult] = useState([]);
   const [error, setError] = useState("");
+  
   const price = 99;
 
   useEffect(() => {

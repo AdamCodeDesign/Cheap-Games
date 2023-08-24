@@ -137,6 +137,13 @@
 
           &:hover {
             transform: scale(1.1);
+
+            &::after{
+              content: 'Add to bucket';
+              position: absolute;
+              top: 3px;
+              right: -100px;
+            }
           }
           &:active{
             transform: scale(1);

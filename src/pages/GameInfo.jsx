@@ -9,6 +9,9 @@ export default function GameInfo() {
   const [screen, setScreen] = useState(null);
   const [movies, setMovies] = useState([]);
   const { id } = useParams();
+  const [showBuyMessage, setShowBuyMessage] = useState(false);
+  const [gameAdded, setGameAdded] = useState(false)
+
 
   //ustawiam state dla funkcji addGameToBucket
   const [title, setTitle] = useState("");
@@ -96,6 +99,13 @@ export default function GameInfo() {
       });
   }, []);
 
+  const buyGame = () => {
+    setShowBuyMessage(prev => prev = !showBuyMessage)
+  };
+  const addGameMessage = () => {
+    setGameAdded(prev => prev = !gameAdded)
+  };
+
   console.log("to jest price", price);
   return (
     <>
@@ -145,7 +155,7 @@ export default function GameInfo() {
               <h1 className="gameTitle">"{game.name}"</h1>
               <div>{game?.genres?.map((genre) => genre.name).join(" , ")}</div>
               <div>{price}pln</div>
-              <button>Buy</button>
+              <button className="bucket-buyButton" onClick={buyGame}>buy</button>
               <button
                 onClick={async () => {
                   try {
@@ -153,10 +163,14 @@ export default function GameInfo() {
                   } catch (error) {
                     setError(error.message);
                   }
-                }}
+                  addGameMessage();
+                }
+              }
               >
                 add to cart
               </button>
+              {showBuyMessage ? <p style={{color:"greenyellow"}}>Payment succes!</p>: ""}
+              {gameAdded ? <p style={{color:"greenyellow"}}>Game added!</p>: ""}
             </section>
           </section>
         </section>

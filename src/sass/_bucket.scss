@@ -1,3 +1,6 @@
+@use "variables" as *;
+@import "mixins";
+
 .bucket-table {
   margin: 0 auto;
   .bucket-list {
@@ -5,4 +8,9 @@
     justify-content: center;
     align-items: center;
   }
+}
+
+.bucket-buyButton{
+  @include buttons(auto, 20%);
+      margin: 30px auto;
 }

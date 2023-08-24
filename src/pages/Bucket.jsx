@@ -7,10 +7,9 @@ export default function Bucket() {
   const [fetchError, setFetchError] = useState("");
   const [gamesList, setGamesList] = useState([]);
   const [priceAllGames, setPriceAllGames] = useState(0);
+  const [showBuyMessage, setShowBuyMessage] = useState(false);
 
   let allprice = priceAllGames;
-
-  //  setPriceAllGames(gamesList?.map((game) => game.price).reduce((a, b) => a + b))
 
   //state dla removeGame
   const [removeError, setRemoveError] = useState("");
@@ -43,14 +42,15 @@ export default function Bucket() {
     if (error) {
       setRemoveError("Could not remove game");
       console.log(error);
-    }else {
+    } else {
       setRemoveError("");
       console.log("to jest gra", data);
       fetchGames();
     }
+  };
 
-    // setGamesList((prevGameList) => prevGameList.filter((el) => el.id !== id));
-    // setGamesList(gamesList.filter((el) => el.id !== id))
+  const buyGame = () => {
+    setShowBuyMessage(prev => prev = !showBuyMessage)
   };
 
   console.log("to jest gamesList", gamesList);
@@ -109,8 +109,13 @@ export default function Bucket() {
             </tbody>
           </table>
           <div>suma do zapłaty : {allprice} pln/brutto</div>
+          <button className="bucket-buyButton" onClick={buyGame}>buy</button>
+          {showBuyMessage ? <p style={{color:"greenyellow"}}>Payment succes!</p>: ""}
+
         </div>
-      ): <div>Nie masz gier w koszyku</div>}
+      ) : (
+        <div>Nie masz gier w koszyku</div>
+      )}
     </>
   );
 }
