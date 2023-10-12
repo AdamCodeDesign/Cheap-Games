@@ -44,3 +44,5 @@ jak powiazac buttton z glownej strony z tym w Gameinfo
 jak zaktualizowac ceny promo we wszystkich podstronach - tak zeby cena byla przypieta do gry
 
 probuje zmienic odleglosc miedzy rozwijanym menu a całą zawartoscia Menu tak zeby nie nachodzily na siebie. Jestem na Nav 11, chce uzyc state do zmiany stylu.
+
+test

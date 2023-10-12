@@ -3,14 +3,12 @@ import {
   HashRouter as Router,
   Routes,
   Route,
-  NavLink,
-  Outlet,
-  useParams,
-  useNavigate,
 } from "react-router-dom";
+
 import Contact from "../pages/Contact";
 import Bucket from "../pages/Bucket";
 import Login from "../pages/Login";
+import SignUp from "../pages/SignUp";
 import ShopRules from "../pages/ShopRules";
 import SpecialOffers from "../pages/SpecialOffers";
 import NewGames from "../pages/NewGames";
@@ -33,6 +31,7 @@ export default function Main() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/bucket" element={<Bucket />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
           <Route path="/rules" element={<ShopRules />} />
           <Route path="/special" element={<SpecialOffers />} />
           <Route path="/new" element={<NewGames />} />

@@ -1,9 +1,8 @@
 import React from "react";
-import { Outlet, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <>
     <footer className="footer">
       <div className="footer_container container">
         <ul>
@@ -18,6 +17,5 @@ export default function Footer() {
         </ul>
       </div>
       </footer>
-    </>
   );
 }

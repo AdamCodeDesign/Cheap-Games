@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import supabase from "../config/supabaseClient";
 
-export default function Login() {
+export default function SignUp() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -96,14 +96,12 @@ export default function Login() {
           </label>
 
           <button type="submit" style={{ fontSize: "1.5em", padding: "3px" }}>
-            Login
+            Sign UP
           </button>
-          <NavLink to="/rules" style={{ marginTop: "20px", fontSize: "1em" }}>
-            I forgot my password!
+          <NavLink to="/login" style={{ marginTop: "20px", fontSize: "1em" }}>
+            I already have an account
           </NavLink>
-          <NavLink to="/signup" style={{ marginTop: "20px", fontSize: "1em" }}>
-            You don't have an account? SIGN UP!
-          </NavLink>
+          
         </form>
       </div>
     </>

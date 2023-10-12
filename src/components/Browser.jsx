@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect} from "react";
 import { NavLink } from "react-router-dom";
 import { addGameToBucket } from "../lib/addGameToCart";
 
@@ -8,7 +8,7 @@ const Browser = ({ filter, sale }) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [result, setResult] = useState([]);
   const [error, setError] = useState("");
-  
+
   const price = 99;
 
   useEffect(() => {
@@ -35,7 +35,7 @@ const Browser = ({ filter, sale }) => {
           setResult(data.results);
           console.log("Lista wszystkich gierek", data);
         }
-      });
+      });//async
   }, [filterGame, searchQuery]);
 
   console.log("to jest result", result);
@@ -55,8 +55,7 @@ const Browser = ({ filter, sale }) => {
           onChange={(e) => {
             setSearchQuery(e.target.value);
           }}
-
-          style={{width:"400px", height:"30px", fontSize:"1em"}}
+          style={{ width: "400px", height: "30px", fontSize: "1em" }}
         />
         <section className="gameList_container">
           {error && <div>{error}</div>}
@@ -74,7 +73,7 @@ const Browser = ({ filter, sale }) => {
                     backgroundPosition: "center",
                     borderRadius: "5px",
                   }}
-                ></div>
+                />
               </NavLink>
 
               <article className="gameContent">
@@ -83,13 +82,15 @@ const Browser = ({ filter, sale }) => {
                     {game.rating && (
                       <img src="src/assets/star-sharp.svg" alt="star" />
                     )}
-                    <div className="points">{game.rating * 2}</div>
+                    {game.rating && (
+                      <div className="points">{game.rating * 2}</div>
+                    )}
                   </div>
                   <NavLink to={`/info/${game.id}`}>
                     <h6 className="gameTitle">{game.name}</h6>
                   </NavLink>
                   <p className="platform_name">
-                    {game.platforms?.map((el) => el.platform.name).join(" , ")}
+                    {game.platforms?.map(({platform:{name}}) => name).join(" , ")}
                   </p>
                   <div className="game-genres">
                     {game.genres.map((el) => (
@@ -98,7 +99,7 @@ const Browser = ({ filter, sale }) => {
                   </div>
                 </div>
                 <div className="gamePrice">
-                  {sale !== 1? (
+                  {sale !== 1 ? (
                     <div>
                       <p
                         className="salePrice"
@@ -132,8 +133,10 @@ const Browser = ({ filter, sale }) => {
                           gatunek: game.genres
                             ?.map((genre) => genre.name)
                             .join(" , "),
-                          platform:game.platforms?.map((el) => el.platform.name).join(" , "),
-                          price:Math.floor(price * sale),
+                          platform: game.platforms
+                            ?.map((el) => el.platform.name)
+                            .join(" , "),
+                          price: Math.floor(price * sale),
                         });
                       } catch (error) {
                         setError(error.message);

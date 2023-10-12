@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import supabase from "../config/supabaseClient";
-import { NavLink, useParams } from "react-router-dom";
 
 export default function Bucket() {
   console.log("to jest supabase", supabase);
@@ -21,6 +20,7 @@ export default function Bucket() {
       setFetchError("Could not fetch games");
       setGamesList([]);
       console.log(error);
+      return;
     }
     if (data) {
       setGamesList(data);

@@ -1,19 +1,16 @@
 import React, { useState } from "react";
-import ReactDOM from "react-dom";
 import { NavLink } from "react-router-dom";
 
 export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [style, setStyle]= useState("60px")
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
-    setStyle("500px")
   };
 
   return (
     <>
-      <header className="header" style={{marginBottom:{style}}}>
+      <header className="header">
         <div className="header_container container">
           <div className="logo">
             <NavLink to="/special">
@@ -22,6 +19,7 @@ export default function Nav() {
               ames
             </NavLink>
           </div>
+          {/* //classNames npm */}
           <ul className={`navlist ${menuOpen ? "active" : ""}`}>
             <div className="hamburger" onClick={toggleMenu}>
               <span className="bar"></span>
@@ -128,7 +126,7 @@ export default function Nav() {
               >
                 <img
                   src="src/assets/person-outline (1).svg"
-                  alt="star"
+                  alt="person icon"
                   className="login_icon"
                 />
               </NavLink>

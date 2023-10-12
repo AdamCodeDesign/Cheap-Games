@@ -169,7 +169,7 @@ export default function GameInfo() {
               >
                 add to cart
               </button>
-              {showBuyMessage ? <p style={{color:"greenyellow"}}>Payment succes!</p>: ""}
+              {showBuyMessage && <p style={{color:"greenyellow"}}>Payment succes!</p>}
               {gameAdded ? <p style={{color:"greenyellow"}}>Game added!</p>: ""}
             </section>
           </section>
