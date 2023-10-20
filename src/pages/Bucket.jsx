@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import supabase from "../config/supabaseClient";
 
-export default function Bucket() {
+export default function Bucket({token}) {
   console.log("to jest supabase", supabase);
   const [fetchError, setFetchError] = useState("");
   const [gamesList, setGamesList] = useState([]);
@@ -58,7 +58,7 @@ export default function Bucket() {
   return (
     <>
       <h1 style={{ marginTop: "100px", marginBottom: "50px" }}>
-        Twoja lista zakupów
+        {token.user.user_metadata.first_name} oto Twoja lista zakupów
       </h1>
       {fetchError && <p>{fetchError}</p>}
       {gamesList.length > 0 ? (

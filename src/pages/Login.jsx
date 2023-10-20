@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import { NavLink , useNavigate} from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import supabase from "../config/supabaseClient";
 
-export default function Login() {
-
+export default function Login({setToken}) {
   let navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: "",
@@ -30,7 +29,8 @@ export default function Login() {
       });
       if (error) throw error;
       console.log(data);
-      navigate("/special")
+      setToken(data);
+      navigate("/bucket");
     } catch (error) {
       alert(error);
     }
