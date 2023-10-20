@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink , useNavigate} from "react-router-dom";
 import supabase from "../config/supabaseClient";
 
 export default function Login() {
+
+  let navigate = useNavigate();
   const [formData, setFormData] = useState({
-    name: "",
     email: "",
     password: "",
   });
@@ -23,16 +24,13 @@ export default function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data, error } = await supabase.auth.signUp({
+      const { data, error } = await supabase.auth.signInWithPassword({
         email: formData.email,
         password: formData.password,
-        options: {
-          data: {
-            first_name: formData.name,
-          },
-        },
       });
-      alert("check your email");
+      if (error) throw error;
+      console.log(data);
+      navigate("/special")
     } catch (error) {
       alert(error);
     }
@@ -60,18 +58,6 @@ export default function Login() {
             alignItems: "center",
           }}
         >
-          <label>
-            Username
-            <input
-              type="text"
-              placeholder="Enter Username"
-              name="name"
-              required
-              onChange={handleChange}
-              style={{ fontSize: "1.5em", padding: "3px" }}
-            />
-          </label>
-
           <label>
             e-mail
             <input

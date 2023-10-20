@@ -45,4 +45,4 @@ jak zaktualizowac ceny promo we wszystkich podstronach - tak zeby cena byla przy
 
 probuje zmienic odleglosc miedzy rozwijanym menu a całą zawartoscia Menu tak zeby nie nachodzily na siebie. Jestem na Nav 11, chce uzyc state do zmiany stylu.
 
-test
+utworzony uzytkownik i da sie zalogowac
