@@ -93,11 +93,11 @@ export default function Bucket({token}) {
                       display: "flex",
                     }}
                   >
-                    <td className="col-3">{game.title}</td>
-                    <td className="col-3">{game.gatunek}</td>
-                    <td className="col-3">{game.platform}</td>
-                    <td className="col-3">{game.price}</td>
-                    <td className="col-3">
+                    <td className="col-3 bucket-list">{game.title}</td>
+                    <td className="col-3 bucket-list">{game.gatunek}</td>
+                    <td className="col-3 bucket-list">{game.platform}</td>
+                    <td className="col-3 bucket-list">{game.price}</td>
+                    <td className="col-3 bucket-list">
                       <img
                         src={trash}
                         style={{ width: "1em", cursor: "pointer" }}
@@ -111,7 +111,7 @@ export default function Bucket({token}) {
           </table>
           <div>suma do zapłaty : {allprice} pln/brutto</div>
           <button className="bucket-buyButton" onClick={buyGame}>buy</button>
-          {showBuyMessage ? <p style={{color:"greenyellow"}}>Payment succes!</p>: ""}
+          {showBuyMessage ? <p style={{color:"greenyellow"}}>Sorry, the website is not finish yet! Come back later!</p>: ""}
 
         </div>
       ) : (

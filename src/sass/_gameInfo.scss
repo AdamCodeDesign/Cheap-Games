@@ -25,7 +25,7 @@
   }
 
   .screenshots {
-    overflow: auto;
+    overflow: scroll;
     white-space: nowrap;
     padding: 10px;
     border: 2px solid $basic-ascent-color;

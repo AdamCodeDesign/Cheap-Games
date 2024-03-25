@@ -7,11 +7,12 @@ $gutters: 10px;
 $base-column-size: calc(100% / $columns);
 
 .container {
-  width: 100vw;
+  width: 100%;
   max-width: 1300px;
   margin: 0 auto;
 
   .row {
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     margin: 40px auto;
@@ -31,15 +32,6 @@ $base-column-size: calc(100% / $columns);
       }
       
     }
-    @media (max-width: 797px){
-      @for $i from 1 through $columns {
-        .col-3 {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: 75px;
-        }
-      }
-    }
+   
   }
 }

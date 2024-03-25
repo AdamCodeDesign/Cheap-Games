@@ -132,7 +132,7 @@ export default function GameInfo() {
                 ))}
               </div>
             )}
-            <div className="screenshots col-12">
+            <div className="screenshots">
               {screen?.results?.map((image) => (
                 <div
                   className="boxImg"
@@ -169,7 +169,7 @@ export default function GameInfo() {
               >
                 add to cart
               </button>
-              {showBuyMessage && <p style={{color:"greenyellow"}}>Payment succes!</p>}
+              {showBuyMessage && <p style={{color:"greenyellow"}}>Sorry, the website is not finish yet! Come back later!</p>}
               {gameAdded ? <p style={{color:"greenyellow"}}>Game added!</p>: ""}
             </section>
           </section>
