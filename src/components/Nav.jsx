@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
+import bucket from "../assets/cart-outline.svg"
+import person from "../assets/person-outline (1).svg"
 
 export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -112,8 +114,8 @@ export default function Nav() {
               >
                 {" "}
                 <img
-                  src="src/assets/cart-outline.svg"
-                  alt="star"
+                  src={bucket}
+                  alt="bucket"
                   className="bucket_icon"
                 />
               </NavLink>
@@ -125,7 +127,7 @@ export default function Nav() {
                 end
               >
                 <img
-                  src="src/assets/person-outline (1).svg"
+                  src={person}
                   alt="person icon"
                   className="login_icon"
                 />

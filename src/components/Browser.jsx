@@ -1,6 +1,8 @@
 import React, { useState, useEffect} from "react";
 import { NavLink } from "react-router-dom";
 import { addGameToBucket } from "../lib/addGameToCart";
+import star from "../assets/star-sharp.svg"
+import cross from "../assets/red-cross.svg"
 
 const Browser = ({ filter, sale }) => {
   const rawgApi = "https://api.rawg.io/api/games";
@@ -80,7 +82,7 @@ const Browser = ({ filter, sale }) => {
                 <div className="gameHeader">
                   <div className="ratingPoints">
                     {game.rating && (
-                      <img src="src/assets/star-sharp.svg" alt="star" />
+                      <img src={star} alt="star" />
                     )}
                     {game.rating && (
                       <div className="points">{game.rating * 2}</div>
@@ -143,7 +145,7 @@ const Browser = ({ filter, sale }) => {
                       }
                     }}
                   >
-                    <img src="src/assets/red-cross.svg" alt="add" />
+                    <img src={cross} alt="add" />
                   </button>
                 </div>
               </article>
