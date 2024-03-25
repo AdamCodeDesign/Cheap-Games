@@ -2,12 +2,8 @@
 @import "mixins";
 
 .bucket-table {
-  margin: 0 auto;
-  .bucket-list {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  margin: 0;
+  font-size: 0.7rem;
 }
 
 .bucket-buyButton{

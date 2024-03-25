@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import supabase from "../config/supabaseClient";
+import trash from "../assets/delete-outline.svg";
 
 export default function Bucket({token}) {
   console.log("to jest supabase", supabase);
@@ -92,13 +93,13 @@ export default function Bucket({token}) {
                       display: "flex",
                     }}
                   >
-                    <td className="col-3 bucket-list">{game.title}</td>
-                    <td className="col-3 bucket-list">{game.gatunek}</td>
-                    <td className="col-3 bucket-list">{game.platform}</td>
-                    <td className="col-3 bucket-list">{game.price}</td>
-                    <td className="col-3 bucket-list">
+                    <td className="col-3">{game.title}</td>
+                    <td className="col-3">{game.gatunek}</td>
+                    <td className="col-3">{game.platform}</td>
+                    <td className="col-3">{game.price}</td>
+                    <td className="col-3">
                       <img
-                        src="src/assets/delete-outline.svg"
+                        src={trash}
                         style={{ width: "1em", cursor: "pointer" }}
                         onClick={() => removeGame(game.id)}
                       />
