@@ -5,6 +5,12 @@
   margin: 0;
   font-size: 0.7rem;
 
+  .bucket-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   @media (max-width: 797px) {
     .bucket-list {
       display: flex;

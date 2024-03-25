@@ -25,9 +25,6 @@ $base-column-size: calc(100% / $columns);
 
     @for $i from 1 through $columns {
       .col-#{$i} {
-        display: flex;
-        justify-content: center;
-        align-items: center;
         width: $base-column-size * $i;
       }
       
