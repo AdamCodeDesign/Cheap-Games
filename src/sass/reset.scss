@@ -200,11 +200,11 @@ audio:not([controls]) {
  *    user zoom.
  */
 
-html {
-  font-size: 100%; /* 1 */
-  -webkit-text-size-adjust: 100%; /* 2 */
-  -ms-text-size-adjust: 100%; /* 2 */
-}
+// html {
+//   font-size: 100%; /* 1 */
+//   -webkit-text-size-adjust: 100%; /* 2 */
+//   -ms-text-size-adjust: 100%; /* 2 */
+// }
 
 img {
   border: 0; /* 1 */
@@ -313,7 +313,7 @@ input[type="search"] {
   -webkit-appearance: textfield; /* 1 */
   -moz-box-sizing: content-box;
   -webkit-box-sizing: content-box; /* 2 */
-  box-sizing: content-box;
+  box-sizing: border-box;
 }
 
 /**

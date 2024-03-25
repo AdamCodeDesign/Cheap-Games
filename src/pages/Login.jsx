@@ -50,7 +50,7 @@ export default function Login({setToken}) {
         <form
           onSubmit={handleSubmit}
           style={{
-            width: "40%",
+            width: "360px",
             height: "400px",
             display: "flex",
             flexDirection: "column",

@@ -52,7 +52,7 @@ export default function SignUp() {
         <form
           onSubmit={handleSubmit}
           style={{
-            width: "40%",
+            width: "360px",
             height: "400px",
             display: "flex",
             flexDirection: "column",
@@ -87,7 +87,7 @@ export default function SignUp() {
             Password
             <input
               type="password"
-              placeholder="Enter Password (at least 6 characters)"
+              placeholder="at least 6 characters"
               name="password"
               required
               onChange={handleChange}
