@@ -14,6 +14,7 @@ import Xbox from "../pages/Xbox";
 import AllGames from "../pages/AllGames";
 import GameInfo from "../pages/GameInfo";
 import Genres from "./Genres";
+import NoUser from "../pages/NoUser";
 
 export default function Main() {
   const [token, setToken] = useState(false);
@@ -28,7 +29,7 @@ export default function Main() {
       setToken(data);
     }
   }, []);
-
+  console.log("token", token);
   return (
     <>
       <main className="main">
@@ -37,7 +38,7 @@ export default function Main() {
             <Route path="/genres" element={<Genres />} />
             <Route path="/info/:id" element={<GameInfo />} />
             <Route path="/contact" element={<Contact />} />
-            {token?<Route path="/bucket" element={<Bucket token = {token}/>} />:""}
+            <Route path="/bucket" element={token ? (<Bucket token={token} />) : (<NoUser/>)} />
             <Route path="/login" element={<Login setToken={setToken} />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/rules" element={<ShopRules />} />
