@@ -41,7 +41,7 @@ export default function Main() {
             <Route path="/login" element={<Login setToken={setToken} />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/rules" element={<ShopRules />} />
-            <Route path="/special" element={<SpecialOffers />} />
+            <Route path="/" element={<SpecialOffers />} />
             <Route path="/new" element={<NewGames />} />
             <Route path="/pc" element={<PC />} />
             <Route path="/playstation" element={<Playstation />} />

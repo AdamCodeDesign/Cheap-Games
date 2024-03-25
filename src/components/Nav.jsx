@@ -14,13 +14,7 @@ export default function Nav() {
     <>
       <header className="header">
         <div className="header_container container">
-          <div className="logo">
-            <NavLink to="/special">
-              <span>C</span>
-              heap <span>G</span>
-              ames
-            </NavLink>
-          </div>
+         
           {/* //classNames npm */}
           <ul className={`navlist ${menuOpen ? "active" : ""}`}>
             <div className="hamburger" onClick={toggleMenu}>
@@ -31,7 +25,7 @@ export default function Nav() {
             <ul className="hamburger_menu">
               <li>
                 <NavLink
-                  to="/special"
+                  to="/"
                   style={({ isActive }) =>
                     isActive
                       ? { color: "tomato" }
@@ -105,6 +99,13 @@ export default function Nav() {
               </li>
             </ul>
           </ul>
+          <div className="logo">
+            <NavLink to="/">
+              <span>C</span>
+              heap <span>G</span>
+              ames
+            </NavLink>
+          </div>
           <ul style={{ display: "flex" }}>
             <li className="bucket">
               <NavLink
