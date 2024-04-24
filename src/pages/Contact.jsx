@@ -6,8 +6,6 @@ export default function Contact() {
       <section className="contact_container container row" style={{display:"flex", flexDirection:"column", justifyContent:"center", height:"100vh"}}>
         <article className="adress col-6">
           <h1>Sklep Cheap Games</h1>
-          <h3>ul. Adama Kodersa 1/1</h3>
-          <h3>42-400 Wrocław</h3>
         </article>
         <article className="contacts col-6">
           <h1>Phone number</h1>
