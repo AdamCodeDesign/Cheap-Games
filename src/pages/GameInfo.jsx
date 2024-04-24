@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import supabase from "../config/supabaseClient";
 import { addGameToBucket } from "../lib/addGameToCart";
 
 export default function GameInfo() {
@@ -18,7 +17,6 @@ export default function GameInfo() {
   const [gatunek, setGatunek] = useState("");
   const [platform, setPlatform] = useState("");
   const [price, setPrice] = useState(null);
-  const [listBucketError, setListBucketError] = useState(null);
 
   useEffect(() => {
     //przy pomocy parametru odnosze sie do ID kliknietej gry - patrz Navlink w Browser
