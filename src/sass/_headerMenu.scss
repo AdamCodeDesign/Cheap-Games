@@ -19,8 +19,7 @@
   background-color: $basic-ascent-color;
   backface-visibility: hidden;
 
-
-    z-index: 2;
+  z-index: 2;
 
   ul {
     display: flex;
@@ -45,15 +44,17 @@
 }
 
 /* Styling for the menu items */
-.hamburger_menu {
-  display: flex;
-  flex-direction: row;
-  align-content: center;
-  li {
-    list-style: none;
+@media (min-width: 797px) {
+  .hamburger_menu {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    li {
+      list-style: none;
 
-    a {
-      @include links();
+      a {
+        @include links();
+      }
     }
   }
 }
@@ -63,7 +64,6 @@
   .navlist.active .hamburger_menu {
     display: none;
   }
- 
 
   .hamburger_menu {
     list-style: none;
@@ -80,12 +80,11 @@
       margin: 0;
       width: 100%;
       text-align: center;
-  
-      &:hover{
+
+      &:hover {
         background-color: $basic-bg-color;
       }
     }
-
   }
 
   .hamburger {
@@ -96,10 +95,9 @@
     color: $basic-orange-color;
     margin-right: 90px;
 
-    &:hover{
-      .bar{
+    &:hover {
+      .bar {
         background-color: $basic-orange-color;
-
       }
     }
 
@@ -110,6 +108,4 @@
       margin: 3px 0;
     }
   }
-
- 
 }

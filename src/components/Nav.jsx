@@ -4,7 +4,7 @@ import bucket from "../assets/cart-outline.svg"
 import person from "../assets/person-outline (1).svg"
 
 export default function Nav() {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(true);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
