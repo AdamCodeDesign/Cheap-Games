@@ -1,25 +1,24 @@
 @use "variables" as *;
 
 @mixin links() {
-  color: $basic-font-color;
+    color: $basic-font-color;
 
-  &:hover {
-    color: white;
-  }
-  &:focus {
-    color: tomato;
-  }
-  
+    &:hover {
+        color: white;
+    }
+    &:focus {
+        color: tomato;
+    }
 }
 
-@mixin buttons($sizeW, $sizeH){
+@mixin buttons($sizeW, $sizeH) {
     height: $sizeW;
     width: $sizeH;
     color: rgb(203, 203, 203);
     margin: 10px 20px;
     padding: 5px;
 
-    &:hover{
+    &:hover {
         color: white;
     }
 }

@@ -2,60 +2,60 @@
 @import "mixins";
 
 .gameInfo_container {
-  width: 100%;
-  padding-bottom: 10px;
-
-  .gameTitle {
-    margin-top: 100px;
-  }
-  .trailers {
-    overflow: auto;
-    white-space: nowrap;
-    background-color: black;
-    border-radius: 60px;
-
-    figure {
-      display: inline-block;
-      height: 480px;
-      padding-bottom: 56.25%; /* 16:9 */
-      position: relative;
-      width: 100%;
-      padding: 30px;
-    }
-  }
-
-  .screenshots {
-    overflow: scroll;
-    white-space: nowrap;
-    padding: 10px;
-    border: 2px solid $basic-ascent-color;
-    border-radius: 60px;
-    background-color: black;
-
-    .boxImg {
-      display: inline-block;
-      margin: 30px;
-      height: 480px;
-      max-width: 640px;
-      border-radius: 60px;
-    }
-  }
-
-  .gameBuy {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    width: 100%;
+    padding-bottom: 10px;
 
     .gameTitle {
-      margin: 0;
+        margin-top: 100px;
     }
-    p {
-      font-style: italic;
+    .trailers {
+        overflow: auto;
+        white-space: nowrap;
+        background-color: black;
+        border-radius: 60px;
+
+        figure {
+            display: inline-block;
+            height: 480px;
+            padding-bottom: 56.25%; /* 16:9 */
+            position: relative;
+            width: 100%;
+            padding: 30px;
+        }
     }
 
-    button {
-      @include buttons(auto, 60%);
-      margin: 0 auto;
+    .screenshots {
+        overflow: scroll;
+        white-space: nowrap;
+        padding: 10px;
+        border: 2px solid $basic-ascent-color;
+        border-radius: 60px;
+        background-color: black;
+
+        .boxImg {
+            display: inline-block;
+            margin: 30px;
+            height: 480px;
+            max-width: 640px;
+            border-radius: 60px;
+        }
     }
-  }
+
+    .gameBuy {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .gameTitle {
+            margin: 0;
+        }
+        p {
+            font-style: italic;
+        }
+
+        button {
+            @include buttons(auto, 60%);
+            margin: 0 auto;
+        }
+    }
 }

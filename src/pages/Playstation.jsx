@@ -1,12 +1,10 @@
-import React from 'react'
-import Genres from '../components/Genres';
-
+import React from "react";
+import Genres from "../components/Genres";
 
 export default function Playstation() {
-
-  return (
-    <>
-      <Genres platform ="?&parent_platforms=2" sale={1}/>
-    </>
-  );
+    return (
+        <>
+            <Genres platform="?&parent_platforms=2" sale={1} />
+        </>
+    );
 }

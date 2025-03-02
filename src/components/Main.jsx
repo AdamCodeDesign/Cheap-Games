@@ -17,40 +17,48 @@ import Genres from "./Genres";
 import NoUser from "../pages/NoUser";
 
 export default function Main() {
-  const [token, setToken] = useState(false);
+    const [token, setToken] = useState(false);
 
-  if (token) {
-    sessionStorage.setItem("token", JSON.stringify(token));
-  }
-
-  useEffect(() => {
-    if (sessionStorage.getItem("token")) {
-      let data = JSON.parse(sessionStorage.getItem("token"));
-      setToken(data);
+    if (token) {
+        sessionStorage.setItem("token", JSON.stringify(token));
     }
-  }, []);
-  console.log("token", token);
-  return (
-    <>
-      <main className="main">
-        <div className="main_container container">
-          <Routes>
-            <Route path="/genres" element={<Genres />} />
-            <Route path="/info/:id" element={<GameInfo />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/bucket" element={token ? (<Bucket token={token} />) : (<NoUser/>)} />
-            <Route path="/login" element={<Login setToken={setToken} />} />
-            <Route path="/signup" element={<SignUp />} />
-            <Route path="/rules" element={<ShopRules />} />
-            <Route path="/" element={<SpecialOffers />} />
-            <Route path="/new" element={<NewGames />} />
-            <Route path="/pc" element={<PC />} />
-            <Route path="/playstation" element={<Playstation />} />
-            <Route path="/xbox" element={<Xbox />} />
-            <Route path="/all" element={<AllGames />} />
-          </Routes>
-        </div>
-      </main>
-    </>
-  );
+
+    useEffect(() => {
+        if (sessionStorage.getItem("token")) {
+            let data = JSON.parse(sessionStorage.getItem("token"));
+            setToken(data);
+        }
+    }, []);
+    console.log("token", token);
+    return (
+        <>
+            <main className="main">
+                <div className="main_container container">
+                    <Routes>
+                        <Route path="/genres" element={<Genres />} />
+                        <Route path="/info/:id" element={<GameInfo />} />
+                        <Route path="/contact" element={<Contact />} />
+                        <Route
+                            path="/bucket"
+                            element={
+                                token ? <Bucket token={token} /> : <NoUser />
+                            }
+                        />
+                        <Route
+                            path="/login"
+                            element={<Login setToken={setToken} />}
+                        />
+                        <Route path="/signup" element={<SignUp />} />
+                        <Route path="/rules" element={<ShopRules />} />
+                        <Route path="/special" element={<SpecialOffers />} />
+                        <Route path="/" element={<NewGames />} />
+                        <Route path="/pc" element={<PC />} />
+                        <Route path="/playstation" element={<Playstation />} />
+                        <Route path="/xbox" element={<Xbox />} />
+                        <Route path="/all" element={<AllGames />} />
+                    </Routes>
+                </div>
+            </main>
+        </>
+    );
 }

@@ -1,13 +1,13 @@
 @use "variables" as *;
 
 %links {
-  color: $basic-font-color;
+    color: $basic-font-color;
 
-  a:hover {
-    color: white;
-    opacity: 1;
-  }
-  a:focus {
-    color: tomato;
-  }
+    a:hover {
+        color: white;
+        opacity: 1;
+    }
+    a:focus {
+        color: tomato;
+    }
 }

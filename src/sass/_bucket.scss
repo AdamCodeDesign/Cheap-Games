@@ -2,26 +2,26 @@
 @import "mixins";
 
 .bucket-table {
-  margin: 0;
-  font-size: 0.7rem;
+    margin: 0;
+    font-size: 0.7rem;
 
-  .bucket-list {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  @media (max-width: 797px) {
     .bucket-list {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 75px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
-  }
+
+    @media (max-width: 797px) {
+        .bucket-list {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 75px;
+        }
+    }
 }
 
 .bucket-buyButton {
-  @include buttons(auto, 20%);
-  margin: 30px auto;
+    @include buttons(auto, 20%);
+    margin: 30px auto;
 }

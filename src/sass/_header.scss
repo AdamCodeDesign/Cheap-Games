@@ -7,41 +7,39 @@
     width: 100vw;
     background-color: $basic-ascent-color;
     z-index: 1;
-  
+
     .header_container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 5px;
-      background-color: $basic-ascent-color;
-      z-index: 1;
-  
-      .logo {
-        span {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 5px;
+        background-color: $basic-ascent-color;
+        z-index: 1;
 
-          font-size: 2rem;
-          color: tomato;
+        .logo {
+            span {
+                font-size: 2rem;
+                color: tomato;
+            }
+            a {
+                color: $basic-font-color;
+            }
         }
-        a {
+        .bucket,
+        .login {
+            margin-left: 15px;
+            background-color: transparent;
+            opacity: 0.7;
+            font-size: 1em;
 
-          color: $basic-font-color;
+            img {
+                height: 1.2em;
+                width: 1.2em;
+            }
+
+            &:hover {
+                opacity: 1;
+            }
         }
-      }
-      .bucket,
-      .login {
-        margin-left: 15px;
-        background-color: transparent;
-        opacity: 0.7;
-        font-size: 1em;
-  
-        img {
-          height: 1.2em;
-          width: 1.2em;
-        }
-  
-        &:hover {
-          opacity: 1;
-        }
-      }
     }
-  }
+}

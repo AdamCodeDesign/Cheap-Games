@@ -1,5 +1,5 @@
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 $columns: 12;
@@ -7,28 +7,25 @@ $gutters: 10px;
 $base-column-size: calc(100% / $columns);
 
 .container {
-  width: 100%;
-  max-width: 1300px;
-  margin: 0 auto;
-
-  .row {
     width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    margin: 40px auto;
+    max-width: 1300px;
+    margin: 0 auto;
 
-    [class*="col-"] {
-      min-height: 100px;
-      padding: 0 $gutters;
-    }
-   
+    .row {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 40px auto;
 
-    @for $i from 1 through $columns {
-      .col-#{$i} {
-        width: $base-column-size * $i;
-      }
-      
+        [class*="col-"] {
+            min-height: 100px;
+            padding: 0 $gutters;
+        }
+
+        @for $i from 1 through $columns {
+            .col-#{$i} {
+                width: $base-column-size * $i;
+            }
+        }
     }
-   
-  }
 }
