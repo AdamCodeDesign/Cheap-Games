@@ -45,10 +45,10 @@ export default function Main() {
                                 token ? <UserBucket token={token} /> : <NoUserBucket />
                             }
                         /> */}
-                        {/* <Route
+                        <Route
                             path="/login"
                             element={<Login setToken={setToken} />}
-                        /> */}
+                        />
                         <Route path="/signup" element={<SignUp />} />
                         <Route path="/rules" element={<ShopRules />} />
                         <Route path="/special" element={<SpecialOffers />} />
