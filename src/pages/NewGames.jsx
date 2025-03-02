@@ -6,7 +6,8 @@ export default function NewGames() {
         <>
             <h1
                 style={{
-                    fontSize: "3rem",
+                    fontSize: "2rem",
+                    fontStyle:"italic",
                     color: "#37BFC9",
                     marginTop: "100px",
                     marginBottom: "30px",

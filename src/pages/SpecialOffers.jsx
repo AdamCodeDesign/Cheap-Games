@@ -7,15 +7,16 @@ export default function Special() {
         <>
             <h1
                 style={{
-                    fontSize: "3rem",
+                    fontSize: "2rem",
+                    fontStyle: "italic",
                     color: "#37BFC9",
                     marginTop: "100px",
                     marginBottom: "30px",
                 }}>
-                Weekend promotion for games from 2018
+                Weekend promotion for games from 2023
             </h1>
             <Genres
-                platform="?&dates=2018-01-01,2018-12-31&ordering=-rating"
+                platform="?&dates=2023-01-01,2023-12-31&ordering=-rating"
                 sale={saleDiscount}
             />
         </>

@@ -40,7 +40,6 @@ export default function Genres({ platform, sale }) {
     return (
         <>
             {error && <div>{error}</div>}
-            <label>select game genre</label>
             <select
                 value={genre}
                 onChange={switchGenre}

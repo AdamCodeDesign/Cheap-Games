@@ -24,6 +24,7 @@ export default function Nav() {
                         <ul className="hamburger_menu">
                             <li>
                                 <NavLink
+                                    onClick={toggleMenu}
                                     to="/special"
                                     style={({ isActive }) =>
                                         isActive
@@ -37,6 +38,7 @@ export default function Nav() {
                             </li>
                             <li>
                                 <NavLink
+                                    onClick={toggleMenu}
                                     to="/"
                                     style={({ isActive }) =>
                                         isActive ? { color: "tomato" } : {}
@@ -48,6 +50,7 @@ export default function Nav() {
                             </li>
                             <li>
                                 <NavLink
+                                    onClick={toggleMenu}
                                     to="/pc"
                                     style={({ isActive }) =>
                                         isActive ? { color: "tomato" } : {}
@@ -59,6 +62,7 @@ export default function Nav() {
                             </li>
                             <li>
                                 <NavLink
+                                    onClick={toggleMenu}
                                     to="/playstation"
                                     style={({ isActive }) =>
                                         isActive ? { color: "tomato" } : {}
@@ -70,6 +74,7 @@ export default function Nav() {
                             </li>
                             <li>
                                 <NavLink
+                                    onClick={toggleMenu}
                                     to="/xbox"
                                     style={({ isActive }) =>
                                         isActive ? { color: "tomato" } : {}
@@ -81,6 +86,7 @@ export default function Nav() {
                             </li>
                             <li>
                                 <NavLink
+                                    onClick={toggleMenu}
                                     to="/all"
                                     style={({ isActive }) =>
                                         isActive ? { color: "tomato" } : {}

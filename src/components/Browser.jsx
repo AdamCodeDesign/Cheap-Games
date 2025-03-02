@@ -83,10 +83,10 @@ const Browser = ({ filter, sale }) => {
                             <article className="gameContent">
                                 <div className="gameHeader">
                                     <div className="ratingPoints">
-                                        {game.rating && (
+                                        {game.rating !== 0 && (
                                             <img src={star} alt="star" />
                                         )}
-                                        {game.rating && (
+                                        {game.rating !== 0 && (
                                             <div className="points">
                                                 {game.rating * 2}
                                             </div>
