@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import supabase from "../config/supabaseClient";
 import trash from "../assets/delete-outline.svg";
 
-export default function Bucket({ token }) {
+export default function UserBucket({token}) {
     console.log("to jest supabase", supabase);
     const [fetchError, setFetchError] = useState("");
     const [gamesList, setGamesList] = useState([]);

@@ -13,7 +13,7 @@ export default function GameInfo() {
 
     //ustawiam state dla funkcji addGameToBucket
     const [title, setTitle] = useState("");
-    const [gatunek, setGatunek] = useState("");
+    const [genre, setGenre] = useState("");
     const [platform, setPlatform] = useState("");
     const [price, setPrice] = useState(null);
 
@@ -40,7 +40,7 @@ export default function GameInfo() {
                     console.log("Lista gierek", data);
                     setGame(data);
                     setTitle(data.name);
-                    setGatunek(
+                    setGenre(
                         data.genres?.map((genre) => genre.name).join(" , "),
                     );
                     setPlatform(
@@ -169,7 +169,7 @@ export default function GameInfo() {
                                     try {
                                         await addGameToBucket({
                                             title,
-                                            gatunek,
+                                            genre,
                                             platform,
                                             price,
                                         });

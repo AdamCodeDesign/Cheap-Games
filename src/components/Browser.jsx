@@ -145,7 +145,7 @@ const Browser = ({ filter, sale }) => {
                                             try {
                                                 await addGameToBucket({
                                                     title: game.name,
-                                                    gatunek: game.genres
+                                                    genre: game.genres
                                                         ?.map(
                                                             (genre) =>
                                                                 genre.name,

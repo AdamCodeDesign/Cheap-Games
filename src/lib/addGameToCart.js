@@ -1,13 +1,13 @@
 import supabase from "../config/supabaseClient";
 
-export const addGameToBucket = async ({ title, gatunek, platform, price }) => {
-    if (!title || !gatunek || !platform || !price) {
+export const addGameToBucket = async ({ title, genre, platform, price }) => {
+    if (!title || !genre || !platform || !price) {
         throw new Error("could not read parametrs");
     }
 
     const { data, error } = await supabase
-        .from("games")
-        .insert({ title, gatunek, platform, price });
+        .from("bucket")
+        .insert([{ title, genre, platform, price }]);
 
     if (error) {
         console.log(error);

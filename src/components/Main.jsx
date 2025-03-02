@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import Contact from "../pages/Contact";
-import Bucket from "../pages/Bucket";
+import UserBucket from "../pages/UserBucket";
 import Login from "../pages/Login";
 import SignUp from "../pages/SignUp";
 import ShopRules from "../pages/ShopRules";
@@ -14,7 +14,7 @@ import Xbox from "../pages/Xbox";
 import AllGames from "../pages/AllGames";
 import GameInfo from "../pages/GameInfo";
 import Genres from "./Genres";
-import NoUser from "../pages/NoUser";
+import NoUserBucket from "../pages/NoUserBucket";
 
 export default function Main() {
     const [token, setToken] = useState(false);
@@ -38,16 +38,17 @@ export default function Main() {
                         <Route path="/genres" element={<Genres />} />
                         <Route path="/info/:id" element={<GameInfo />} />
                         <Route path="/contact" element={<Contact />} />
-                        <Route
+                        <Route path="/bucket" element={<NoUserBucket />} />
+                        {/* <Route
                             path="/bucket"
                             element={
-                                token ? <Bucket token={token} /> : <NoUser />
+                                token ? <UserBucket token={token} /> : <NoUserBucket />
                             }
-                        />
-                        <Route
+                        /> */}
+                        {/* <Route
                             path="/login"
                             element={<Login setToken={setToken} />}
-                        />
+                        /> */}
                         <Route path="/signup" element={<SignUp />} />
                         <Route path="/rules" element={<ShopRules />} />
                         <Route path="/special" element={<SpecialOffers />} />

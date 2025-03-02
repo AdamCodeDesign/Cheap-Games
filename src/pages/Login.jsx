@@ -57,32 +57,31 @@ export default function Login({ setToken }) {
                         alignItems: "center",
                     }}>
                     <label>
-                        e-mail
                         <input
                             type="email"
-                            placeholder="Email"
                             name="email"
+                            placeholder="e-mail"
                             required
                             onChange={handleChange}
-                            style={{ fontSize: "1.5em", padding: "3px" }}
+                            style={{ fontSize: "1.2em", padding: "3px" }}
                         />
                     </label>
                     <label>
-                        Password
+                        
                         <input
                             type="password"
-                            placeholder="Enter Password"
+                            placeholder="password"
                             name="password"
                             required
                             onChange={handleChange}
-                            style={{ fontSize: "1.5em", padding: "3px" }}
+                            style={{ fontSize: "1.2em", padding: "3px" }}
                         />
                     </label>
 
                     <button
                         type="submit"
-                        style={{ fontSize: "1.5em", padding: "3px" }}>
-                        Login
+                        style={{ fontSize: "1.2em", padding: "3px" }}>
+                        login
                     </button>
                     <NavLink
                         to="/rules"
@@ -92,7 +91,7 @@ export default function Login({ setToken }) {
                     <NavLink
                         to="/signup"
                         style={{ marginTop: "20px", fontSize: "1em" }}>
-                        You don't have an account? SIGN UP!
+                        You don't have an account yet? SIGN UP!
                     </NavLink>
                 </form>
             </div>
