@@ -19,6 +19,7 @@ $base-column-size: calc(100% / $columns);
 
         [class*="col-"] {
             min-height: 100px;
+            text-align: center;
         }
 
         @for $i from 1 through $columns {
