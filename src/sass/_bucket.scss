@@ -2,8 +2,9 @@
 @import "mixins";
 
 .bucket-table {
-    margin: 0;
+    margin: 0 auto;
     font-size: 0.7rem;
+    width: 100%;
 
     .bucket-list {
         display: flex;
@@ -16,7 +17,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 75px;
+            width: 20%;
         }
     }
 }

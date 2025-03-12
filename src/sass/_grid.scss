@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 
-$columns: 12;
+$columns: 10;
 $gutters: 10px;
 $base-column-size: calc(100% / $columns);
 
@@ -19,7 +19,6 @@ $base-column-size: calc(100% / $columns);
 
         [class*="col-"] {
             min-height: 100px;
-            padding: 0 $gutters;
         }
 
         @for $i from 1 through $columns {

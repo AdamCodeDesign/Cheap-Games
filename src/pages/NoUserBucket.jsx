@@ -88,7 +88,7 @@ export default function NoUserBucket() {
                             {gamesList.map((game) => {
                                 return (
                                     <tr
-                                        className="col-12"
+                                        className="col-10"
                                         key={game.id}
                                         style={{
                                             borderTop:
@@ -97,19 +97,19 @@ export default function NoUserBucket() {
                                                 "1px solid rgb(256,161,71)",
                                             display: "flex",
                                         }}>
-                                        <td className="col-3 bucket-list">
+                                        <td className="col-2 bucket-list">
                                             {game.title}
                                         </td>
-                                        <td className="col-3 bucket-list">
+                                        <td className="col-2 bucket-list">
                                             {game.genre}
                                         </td>
-                                        <td className="col-3 bucket-list">
+                                        <td className="col-2 bucket-list">
                                             {game.platform}
                                         </td>
-                                        <td className="col-3 bucket-list">
+                                        <td className="col-2 bucket-list">
                                             {game.price}
                                         </td>
-                                        <td className="col-3 bucket-list">
+                                        <td className="col-2 bucket-list">
                                             <img
                                                 src={trash}
                                                 style={{
