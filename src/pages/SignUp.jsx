@@ -59,44 +59,42 @@ export default function SignUp() {
                         alignItems: "center",
                     }}>
                     <label>
-                        Username
+                        
                         <input
                             type="text"
-                            placeholder="Enter Username"
+                            placeholder="username"
                             name="name"
                             required
                             onChange={handleChange}
-                            style={{ fontSize: "1.5em", padding: "3px" }}
+                            style={{ fontSize: "1.2em", padding: "3px" }}
                         />
                     </label>
 
                     <label>
-                        e-mail
                         <input
                             type="email"
-                            placeholder="Email"
+                            placeholder="email"
                             name="email"
                             required
                             onChange={handleChange}
-                            style={{ fontSize: "1.5em", padding: "3px" }}
+                            style={{ fontSize: "1.2em", padding: "3px" }}
                         />
                     </label>
                     <label>
-                        Password
                         <input
                             type="password"
-                            placeholder="at least 6 characters"
+                            placeholder="password at least 6 characters"
                             name="password"
                             required
                             onChange={handleChange}
-                            style={{ fontSize: "1.5em", padding: "3px" }}
+                            style={{ fontSize: "1.2em", padding: "3px" }}
                         />
                     </label>
 
                     <button
                         type="submit"
                         style={{ fontSize: "1.5em", padding: "3px" }}>
-                        Sign UP
+                        sign up
                     </button>
                     <NavLink
                         to="/login"
