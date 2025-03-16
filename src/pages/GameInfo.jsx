@@ -148,7 +148,7 @@ export default function GameInfo() {
                         </div>
                     </section>
                     <section className="gameContent row">
-                        <section className="description col-8">
+                        <section className="description col-6">
                             <div className="col-12">{game.description_raw}</div>
                         </section>
                         <section className="gameBuy col-4">
